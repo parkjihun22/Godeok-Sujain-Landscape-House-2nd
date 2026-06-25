@@ -23,7 +23,6 @@ const ComplexGuide1 = () => {
   ];
 
   const [isScroll, setIsScroll] = useState(false);
-  const [isImage2Loaded, setIsImage2Loaded] = useState(false); // 이미지 로드 상태
   const { pathname } = useLocation(); // 현재 경로를 가져옴
 
   useEffect(() => {
@@ -46,17 +45,12 @@ const ComplexGuide1 = () => {
     };
   }, []);
 
-  // 이미지 로드 후 애니메이션 실행
-  const handleImageLoad = () => {
-    setIsImage2Loaded(true);
-  };
-
   return (
     <div className={styles.container}>
 <Header isChanged={isScroll} />
       <FixIcon />
 
-      <Bener title="체크포인트" />
+      <Bener title="청약안내" />
 
       <MenuBar contents={menuContents} />
 <div className={styles.textBox}>

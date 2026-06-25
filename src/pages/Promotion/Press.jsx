@@ -122,7 +122,7 @@ export default function Press() {
   return (
     <>
       <Header />
-      <Bener title="홍보센터" />
+      <Bener title="언론보도" />
       <MenuBar
         contents={[
           { title: "언론보도", url: pressBasePath },

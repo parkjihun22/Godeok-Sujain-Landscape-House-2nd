@@ -8,7 +8,6 @@ import {
   increment
 } from "firebase/firestore";
 import { db } from "../../firebase";
-import { useMediaQuery } from "react-responsive";
 
 import Header from "../../components/Header/Header";
 import MenuBar from "../../components/MenuBar/MenuBar";
@@ -24,7 +23,6 @@ export default function PressDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [article, setArticle] = useState(null);
-  const isMobile = useMediaQuery({ query: "(max-width: 900px)" });
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -54,7 +52,7 @@ export default function PressDetail() {
         }}
       />
       <Header />
-      <Bener title="홍보센터" />
+      <Bener title="언론보도" />
       <MenuBar
         contents={[
           { title: "언론보도", url: "/Promotion/Press" },

@@ -6,6 +6,18 @@ export const siteSeo = {
   locale: "ko_KR",
   organizationId: "https://www.sujain-modellhouse.co.kr/#organization",
   websiteId: "https://www.sujain-modellhouse.co.kr/#website",
+  defaultDescription:
+    "고덕 수자인 하우스디 공식 홈페이지입니다. 평택 고덕국제화계획지구 A-67BL 입지, 사업개요, 공급안내, 분양일정, 84㎡·101㎡ 평면도, E-모델하우스와 모델하우스 방문예약 정보를 확인하세요.",
+  keywords: [
+    "고덕 수자인 하우스디",
+    "평택 고덕국제화계획지구",
+    "고덕국제신도시 아파트",
+    "고덕 A-67BL",
+    "삼성 평택캠퍼스 직주근접",
+    "84㎡ 101㎡ 평면도",
+    "E-모델하우스",
+    "모델하우스 방문예약",
+  ],
 };
 
 export const seoNavigation = [
@@ -86,6 +98,7 @@ const page = ({
   image = siteSeo.ogImage,
   priority = 0.8,
   changefreq = "weekly",
+  robots = "index, follow, max-snippet:-1, max-image-preview:large",
 }) => ({
   path,
   title,
@@ -94,14 +107,14 @@ const page = ({
   image,
   priority,
   changefreq,
+  robots,
 });
 
 export const seoPages = {
   home: page({
     path: "/",
-    title: "고덕 수자인 하우스디",
-    description:
-      "평택 고덕 수자인풍경채ㅣ☎️(대표)1533-8848ㅣ평택 고덕국제신도시 수자인풍경채 ㅣ견본주택ㅣ모델하우스ㅣ위치ㅣ청약ㅣ분양ㅣ분양가ㅣ공급정보ㅣ잔여세대문의ㅣ고객센터ㅣ방문예약",
+    title: "고덕 수자인 하우스디 | 평택 고덕국제신도시 아파트",
+    description: siteSeo.defaultDescription,
     menu: "홈",
     priority: 1,
     changefreq: "daily",
@@ -310,6 +323,16 @@ export const seoPages = {
     priority: 0.9,
     changefreq: "daily",
   }),
+  notFound: page({
+    path: "/404",
+    title: "페이지를 찾을 수 없습니다 | 고덕 수자인 하우스디",
+    description:
+      "요청하신 페이지를 찾을 수 없습니다. 고덕 수자인 하우스디 공식 홈페이지의 사업안내, 입지환경, 세대안내, E-모델하우스와 관심고객등록 메뉴를 이용해 주세요.",
+    menu: "오류",
+    priority: 0,
+    changefreq: "yearly",
+    robots: "noindex, follow",
+  }),
 };
 
 export const seoPathMap = Object.fromEntries(
@@ -332,5 +355,5 @@ export const getSeoPageByPath = (pathname = "/") => {
   if (normalizedPath.includes("/press/")) return seoPages.press;
   if (normalizedPath.endsWith("/customer")) return seoPages.customer;
 
-  return seoPages.home;
+  return seoPages.notFound;
 };

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 import styles from "./FloorPlan.module.scss";
 import Header from "../../components/Header/Header";
@@ -39,9 +38,6 @@ const FloorPlanVideos = () => {
     { title: "입지안내", url: "/LocationEnvironment/intro" },
     { title: "프리미엄", url: "/LocationEnvironment/primium" },
   ];
-
-  const { pathname } = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.scrollY > 0);
@@ -59,7 +55,7 @@ const FloorPlanVideos = () => {
       
       <Header isChanged={isScroll} />
       <FixIcon />
-      <Bener title="세대안내" />
+      <Bener title="세대안내영상" />
       <MenuBar contents={menuContents} />
 <div className={styles.textBox}>
 				<div>강화의 새로운 기준 위에</div>

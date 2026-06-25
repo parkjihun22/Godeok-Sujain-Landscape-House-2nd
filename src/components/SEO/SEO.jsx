@@ -6,28 +6,58 @@ import {
   siteSeo,
 } from "../../seo/siteSeoData";
 
-const buildBreadcrumbSchema = (page) => ({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
+const getNavigationLinks = () =>
+  seoNavigation.flatMap((item) => [
+    { name: item.name, path: item.path },
+    ...(item.children || []).map((child) => ({
+      name: child.name,
+      path: child.path,
+      parentName: item.name,
+    })),
+  ]);
+
+const findNavigationGroup = (path) =>
+  seoNavigation.find((item) => {
+    const normalizedPath = path.toLowerCase();
+    return (
+      item.path.toLowerCase() === normalizedPath ||
+      item.children?.some((child) => child.path.toLowerCase() === normalizedPath)
+    );
+  });
+
+const getShortTitle = (title) => title.split("|")[0].trim();
+
+const buildBreadcrumbSchema = (page) => {
+  const group = findNavigationGroup(page.path);
+  const items = [
     {
-      "@type": "ListItem",
-      position: 1,
       name: "홈",
-      item: getAbsoluteUrl("/"),
+      path: "/",
     },
-    ...(page.path === "/"
-      ? []
-      : [
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: page.menu || page.title,
-            item: getAbsoluteUrl(page.path),
-          },
-        ]),
-  ],
-});
+  ];
+
+  if (page.path !== "/" && group) {
+    items.push({ name: group.name, path: group.path });
+
+    if (group.path.toLowerCase() !== page.path.toLowerCase()) {
+      items.push({ name: getShortTitle(page.title), path: page.path });
+    }
+  } else if (page.path !== "/") {
+    items.push({ name: getShortTitle(page.title), path: page.path });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${getAbsoluteUrl(page.path)}#breadcrumb`,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: getAbsoluteUrl(item.path),
+    })),
+  };
+};
 
 const buildWebsiteSchema = () => ({
   "@context": "https://schema.org",
@@ -60,7 +90,8 @@ const buildWebsiteSchema = () => ({
 const buildNavigationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "ItemList",
-  itemListElement: seoNavigation.map((item, index) => ({
+  name: "고덕 수자인 하우스디 주요 메뉴",
+  itemListElement: getNavigationLinks().map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
@@ -81,6 +112,10 @@ const buildWebPageSchema = (page) => ({
   inLanguage: "ko-KR",
   isPartOf: { "@id": siteSeo.websiteId },
   about: { "@id": siteSeo.organizationId },
+  breadcrumb: {
+    "@id": `${getAbsoluteUrl(page.path)}#breadcrumb`,
+  },
+  publisher: { "@id": siteSeo.organizationId },
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: getAbsoluteUrl(page.image || siteSeo.ogImage),
@@ -92,22 +127,19 @@ const SEO = ({ page }) => {
 
   const canonicalUrl = getAbsoluteUrl(page.path);
   const imageUrl = getAbsoluteUrl(page.image || siteSeo.ogImage);
-  const isHome = page.path === "/";
-
   const schemas = [
+    buildWebsiteSchema(),
+    buildNavigationSchema(),
     buildWebPageSchema(page),
     buildBreadcrumbSchema(page),
-    ...(isHome ? [buildWebsiteSchema(), buildNavigationSchema()] : []),
   ];
 
   return (
     <Helmet prioritizeSeoTags>
       <title>{page.title}</title>
       <meta name="description" content={page.description} />
-      <meta
-        name="robots"
-        content="index, follow, max-snippet:-1, max-image-preview:large"
-      />
+      <meta name="keywords" content={siteSeo.keywords.join(", ")} />
+      <meta name="robots" content={page.robots} />
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content="website" />

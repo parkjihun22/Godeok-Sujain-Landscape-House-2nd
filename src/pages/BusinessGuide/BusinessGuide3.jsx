@@ -8,8 +8,6 @@ import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
 import page1 from "../../assets/BusinessGuide/documents/contract.jpg";
 
-import Ready from "../../components/Ready/Ready";
-
 const BusinessGuide2 = () => {
 	const menuContents = [
 		{ title: "공급안내", url: "/BusinessGuide/documents" },
@@ -19,7 +17,6 @@ const BusinessGuide2 = () => {
 		// { title: "청약안내문", url: "/SalesInfo/guide" },
 	];
 	const [isScroll, setIsScroll] = useState(false);
-	const [selectedOption, setSelectedOption] = useState(1); // 선택된 옵션 (1~6)
 	const [isImageVisible, setIsImageVisible] = useState(false); // isImageVisible 상태 추가
 	const { pathname } = useLocation(); // 현재 경로를 가져옴
 

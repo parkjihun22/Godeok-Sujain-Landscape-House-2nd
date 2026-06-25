@@ -12,10 +12,9 @@ import page1 from "../../assets/FloorPlan/FloorPlan6/unit_84d.jpg"
 
 const FloorPlan6 = () => {
 	const menuContents = [
-		{ title: "84A㎡ ", url: "/FloorPlan/59A" },
-		{ title: "84B㎡", url: "/FloorPlan/59B" },
-		{ title: "84C㎡", url: "/FloorPlan/84A" },
-		{ title: "101㎡", url: "/FloorPlan/84B" },
+		{ title: "84A㎡", url: "/FloorPlan/59A" },
+		{ title: "84C㎡", url: "/FloorPlan/59B" },
+		{ title: "101㎡", url: "/FloorPlan/84A" },
 		// { title: "84A", url: "/FloorPlan/114A" },
     	// { title: "84D", url: "/FloorPlan/114B" },
 		// { title: "세대안내영상", url: "/FloorPlan/videos" }, // 세대안내영상 링크
@@ -57,7 +56,7 @@ const FloorPlan6 = () => {
 			<Header isChanged={isScroll} />
 			<FixIcon />
 
-			<Bener title="세대안내" />
+			<Bener title="114B㎡ 평면도" />
 
 			<MenuBar contents={menuContents} />
 

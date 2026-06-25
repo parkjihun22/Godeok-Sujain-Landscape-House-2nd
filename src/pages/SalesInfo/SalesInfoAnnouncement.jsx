@@ -10,9 +10,6 @@ import FixIcon from "../../components/FixIcon/FixIcon";
 import page1 from "../../assets/SalesInfo/SalesInfoAnnouncement/page1.jpg";
 import pdfIcon from "../../assets/icons/pdf-icon.png";  // PDF 아이콘 이미지 임포트
 
-import Ready from "../../components/Ready/Ready";
-
-
 const ComplexGuide1 = () => {
   const menuContents = [
     { title: "공급안내", url: "/BusinessGuide/documents" },

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
-// PC, 嶺뚮ㅄ維????熬곣뫗??CSS 嶺뚮ㅄ維獄?(Main.module.scss ???고뱺 嶺뚮ㅄ維獄??????源녿굵 ?影? ?롪퍔???
+// PC와 모바일 메인 화면 스타일을 함께 관리합니다.
 import styles from "./Main.module.scss";
 import QuickInfo from "../../components/QuickInfo/QuickInfo";
 import Premium from "../../components/Premium/Premium";
@@ -15,7 +15,6 @@ import UnitplanBox from "../../components/UnitplanBox/UnitplanBox";
 import MobileOverviewSection from "../../components/MobileOverviewSection/MobileOverviewSection";
 import Community from "../../components/Community/Community";
 import InterestPopup from "../../components/InterestPopup/InterestPopup";
-// import UrlContainer from "../../components/UrlContainer/UrlContainer";\
 import UnitInfoSection from "../../components/UnitInfoSection/UnitInfoSection";
 import FAQSection from "../../components/FAQSection/FAQSection"
 import ReservationSection from "../../components/ReservationSection/ReservationSection";
@@ -50,7 +49,7 @@ const Main = () => {
     }));
   };
 
-  // ???꾩씩???????녹맠 ?곌떠???嶺뚳퐣瑗??
+  // 스크롤 여부에 따라 Header 상태를 갱신합니다.
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.scrollY > 0);
@@ -60,7 +59,7 @@ const Main = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ??諛몄뵜 ????????꾩룄?쀧몭????꾩씩????ル맪??+ ??????筌뤾퍔??
+  // 관심고객 팝업이 열렸을 때 배경 스크롤을 잠그고 키보드 포커스를 팝업 안에 유지합니다.
   useEffect(() => {
     if (isInterestPopupOpen) {
       const prevOverflow = document.body.style.overflow;
@@ -107,7 +106,7 @@ const Main = () => {
     }
   }, [isInterestPopupOpen]);
 
-  // PC????ｇ춯???瑜곷턄嶺뚯솘? ?熬곥굦?????꾩씩?????繹??嶺뚳퐣瑗??
+  // PC에서는 휠 이동으로 메인 섹션을 한 화면씩 넘깁니다.
   useEffect(() => {
     if (isMobile) return;
 
@@ -141,7 +140,7 @@ const Main = () => {
     return () => window.removeEventListener("wheel", handleWheel);
   }, [page, isScrolling, isMobile, isInterestPopupOpen]);
 
-  // PC???????瑜곷턄嶺뚯솘? ?뺢퀡??????⑤벡逾????꾩씩???????
+  // 현재 페이지 번호에 맞춰 PC 화면의 스크롤 위치를 이동합니다.
   useEffect(() => {
     if (isMobile) return;
 
@@ -157,28 +156,9 @@ const Main = () => {
     <>
 
       {!isMobile ? (
-        // PC ?뺢퀗???
+        // PC 메인 화면
         <>
           <Header isChanged={isScroll} />
-          {/* {isOpenPopup1 && (
-            <Popup
-              onClosed={() => setIsOpenPopup1(false)}
-              numbering={1}
-              openInterestPopup={() => setIsInterestPopupOpen(true)}
-            />
-          )}
-          {!isOpenPopup1 && isOpenPopup2 && (
-            <Popup
-              onClosed={() => setIsOpenPopup2(false)}
-              numbering={2}
-            />
-          )}
-          {!isOpenPopup2 && isOpenPopup3 && (
-            <Popup
-              onClosed={() => setIsOpenPopup3(false)}
-              numbering={3}
-            />
-          )} */}
 
           <div className={styles.imageContainer}>
             <img
@@ -250,7 +230,7 @@ const Main = () => {
               <div className={styles.textBox}>
                 <UnitplanBox />
                 <Link to="/FloorPlan/84A" className={styles.text2}>
-                  ??????←솻洹ｋ뼬??{">"}
+                  평면도 더 알아보기 {">"}
                 </Link>
               </div>
             </div>
@@ -262,31 +242,10 @@ const Main = () => {
             handleInputChange={handleInputChange}
           />
 
-          {/* <div className={styles.section}>
-            <div className={styles.section9}>
-              <div className={styles.textBox}>
-                <div className={styles.title}>
-                  ??μ쪚????瑜곸겱????瑜곷뮡???논꺏
-                  <br />
-                  <span>?롪벴?곌텥?낅슣?쎿틦????곕뻣??븐럥彛?/span>
-                </div>
-                <div className={styles.subTitle}>
-                  <div className={styles.textLine}></div>
-                  <div className={styles.subText}>
-                    嶺뚢뒫??????????熬곣몿????낅슣?딀뤃?살쾸??곸궡瑗??먯?? ??됀??
-                    <br />
-                    ??μ쪚????瑜곸겱????瑜곷뮡???논꺏?띠럾? ??節띾쐾??紐껊퉵??
-                  </div>
-                </div>
-              </div>
-              <img src={map1} alt="??μ쪚????瑜곸겱????瑜곷뮡???논꺏???곕뻣??븐럥彛???뉖?-image1" />
-            </div>
-          </div> */}
-
           <div className={styles.section5}>
             <Footer />
           </div>
-          {/* ?꾩렮維뽪룇???고뒎 ??諛몄뵜 (PC) */}
+          {/* 관심고객 등록 팝업 - PC */}
           {isInterestPopupOpen && (
             <InterestPopup
               onClose={() => setIsInterestPopupOpen(false)}
@@ -296,30 +255,8 @@ const Main = () => {
           )}
         </>
       ) : (
-        // 嶺뚮ㅄ維????뺢퀗???
+        // 모바일 메인 화면
         <div className={styles.mobileMain}>
-          {/* {isOpenPopup1 && (
-              onClosed={() => setIsOpenPopup1(!isOpenPopup1)}
-              numbering={1}
-              openInterestPopup={() => setIsInterestPopupOpen(true)}
-            />
-          )}
-          {isOpenPopup2 && (
-              onClosed={() => setIsOpenPopup2(!isOpenPopup2)}
-              numbering={2}
-            />
-          )}
-          {isOpenPopup3 && (
-              onClosed={() => setIsOpenPopup3(!isOpenPopup3)}
-              numbering={3}
-            />
-          )}
-          {isOpenPopup4 && (
-              onClosed={() => setIsOpenPopup4(!isOpenPopup4)}
-              numbering={4}
-            />
-          )} */}
-
           <Header isChanged={isScroll} />
 
           <div className={styles.imageContainer}>
@@ -370,14 +307,6 @@ const Main = () => {
           </div>
           <Location onReserve={() => setIsInterestPopupOpen(true)} />
           <MobileOverviewSection />
-          {/* ?????? 2.5. 繞벿살탪?????-???꾩씩??????嶺뚯솘? ?獄?????????
-         <div className={styles.mobileMiddleImage}>
-           <img
-             src={require("../../assets/Bener/event.jpg")}
-            alt="??? ?熬곥룓???怨뺣뼺? ????嶺뚯솘?"
-             className={styles.middleImage}
-           />
-         </div> */}
 
           <section className={styles.darkSection}>
             <Community />
@@ -385,28 +314,7 @@ const Main = () => {
 
           <UnitInfoSection />
 
-          {/* <div className={styles.container4}>
-            <div className={styles.text1}>UNITPLAN</div>
-            <UnitplanBox />
-            <Link to="/FloorPlan/84A" className={styles.text2}>
-              <div>??????←솻洹ｋ뼬??&gt;</div>
-            </Link>
-          </div> */}
-
           <Premium />
-
-
-          {/* <div className={styles.container2}>
-            <div>
-              <img
-                src={section1_Image1}
-                alt="??μ쪚????瑜곸겱????瑜곷뮡???논꺏??곗뒧???戮?틬??mobile-image5"
-              />
-              <Link to="/Brand/intro" className={styles.btn}>
-                ??곗뒧??????六?{">"}
-              </Link>
-            </div>
-          </div> */}
           <FAQSection />
 
           <ReservationSection
@@ -414,21 +322,11 @@ const Main = () => {
             handleInputChange={handleInputChange}
           />
 
-
-          {/* <div className={styles.section}>
-            <div className={styles.section9}>
-              <img
-                src={mobilemap1}
-                alt="??μ쪚????瑜곸겱????瑜곷뮡???논꺏???곕뻣??븐럥彛???뉖?-mobileimage2"
-              />
-            </div>
-          </div> */}
-
           <div className={styles.section5}>
             <Footer />
             <FixIcon />
           </div>
-          {/* ?꾩렮維뽪룇???고뒎 ??諛몄뵜 (嶺뚮ㅄ維??? */}
+          {/* 관심고객 등록 팝업 - 모바일 */}
           {isInterestPopupOpen && (
             <InterestPopup
               onClose={() => setIsInterestPopupOpen(false)}

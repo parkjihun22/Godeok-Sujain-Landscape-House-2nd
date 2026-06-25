@@ -11,12 +11,12 @@ import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
 const Brand2 = () => {
 	const menuContents = [
-		// { title: "브랜드 소개", url: "/brand/intro" }, 
-		{ title: "홍보 영상", url: "/brand/video" }];
+		// { title: "브랜드 소개", url: "/Brand/intro" },
+		{ title: "홍보 영상", url: "/Brand/video" }];
 
 
 	const [isScroll, setIsScroll] = useState(false);
-	const [isTextVisible, setIsTextVisible] = useState(true); // isTextVisible 상태 추가
+	const isTextVisible = true;
 	const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
 	const { pathname } = useLocation(); // 현재 경로를 가져옴
 

@@ -10,10 +10,16 @@ import FixIcon from "../../components/FixIcon/FixIcon";
 
 const Emodel = () => {
   const menuContents = [
+    { title: "84A㎡", url: "/FloorPlan/59A" },
+    { title: "84C㎡", url: "/FloorPlan/59B" },
+    { title: "101㎡", url: "/FloorPlan/84A" },
+    { title: "E-모델하우스", url: "/FloorPlan/Emodel" },
+  ];
+
+  const typeTabs = [
     { title: "84A㎡", key: "84A㎡" },
     { title: "84C㎡", key: "84C㎡" },
     { title: "101㎡", key: "101㎡" },
-    // { title: "84B", key: "84B" },
   ];
 
   const vrUrls = {
@@ -44,7 +50,7 @@ const Emodel = () => {
     <div className={styles.container}>
       <Header isChanged={isScroll} />
       <FixIcon />
-      <Bener title="E모델하우스" />
+      <Bener title="E-모델하우스" />
       <MenuBar contents={menuContents} />
 
       <div className={styles.textBox}>
@@ -53,7 +59,7 @@ const Emodel = () => {
       </div>
 
       <div className={styles.tabMenu}>
-        {menuContents.slice(0, 5).map((tab, idx) => (
+        {typeTabs.map((tab, idx) => (
           <button
             key={idx}
             onClick={() => setSelectedType(tab.key)}

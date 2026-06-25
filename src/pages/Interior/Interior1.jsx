@@ -9,9 +9,6 @@ import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
 import page1 from "../../assets/Interior/Interior1/interior01.jpg";
 
-import Ready from "../../components/Ready/Ready";
-
-
 const Interior1 = () => {
   const menuContents = [
 		{ title: "84A㎡", url: "/Interior/59A" },
@@ -56,7 +53,7 @@ const Interior1 = () => {
       <Header isChanged={isScroll} />
       <FixIcon />
 
-      <Bener title="인테리어" />
+      <Bener title="84A㎡ 인테리어" />
 
       <MenuBar contents={menuContents} />
 

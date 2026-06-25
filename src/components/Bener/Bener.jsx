@@ -40,7 +40,35 @@ const Bener = ({ title = "고덕 수자인 하우스디" }) => {
 export default Bener;
 
 const contents = (text, isLoaded) => {
-  if (text === '홍보영상' || text === '체크포인트' || text === '당첨자서류안내' || text === '고덕 수자인 하우스디') {
+  const normalizedText = text.replace(/\s/g, "");
+  const brandTitles = ["홍보영상", "브랜드소개", "고덕수자인하우스디"];
+  const businessTitles = [
+    "사업개요",
+    "사업안내",
+    "분양일정",
+    "공급안내",
+    "분양안내",
+    "청약안내",
+    "모집공고안내",
+    "인지세납부안내",
+  ];
+  const locationTitles = ["입지환경", "입지안내", "프리미엄"];
+  const complexTitles = ["단지안내", "단지배치도", "호수배치도", "커뮤니티"];
+  const unitTitles = [
+    "세대안내",
+    "세대안내영상",
+    "84A㎡평면도",
+    "84C㎡평면도",
+    "101㎡평면도",
+    "84B㎡평면도",
+    "114A㎡평면도",
+    "114B㎡평면도",
+    "E모델하우스",
+    "E-모델하우스",
+  ];
+  const promotionTitles = ["홍보센터", "언론보도", "관심고객등록", "방문예약등록"];
+
+  if (brandTitles.includes(normalizedText)) {
     return (
       <>
         <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
@@ -54,7 +82,7 @@ const contents = (text, isLoaded) => {
         </div>
       </>
     );
-  } else if (text === '사업개요' || text === '세대안내' || text === '인테리어' || text === '청약안내' || text === '모집공고안내' || text === '인지세납부안내') {
+  } else if (businessTitles.includes(normalizedText) || unitTitles.includes(normalizedText) || normalizedText.includes("인테리어")) {
     return (
       <>
         <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
@@ -71,7 +99,7 @@ const contents = (text, isLoaded) => {
         </div>
       </>
     );
-  } else if (text === '입지환경'|| text === '프리미엄') {
+  } else if (locationTitles.includes(normalizedText)) {
     return (
       <>
         <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
@@ -82,7 +110,7 @@ const contents = (text, isLoaded) => {
         </div>
       </>
     );
-  } else if (text === '단지안내') {
+  } else if (complexTitles.includes(normalizedText)) {
     return (
       <>
         <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
@@ -96,5 +124,22 @@ const contents = (text, isLoaded) => {
         </div>
       </>
     );
+  } else if (promotionTitles.includes(normalizedText)) {
+    return (
+      <>
+        <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
+          고덕 수자인 하우스디의 분양 소식과 모델하우스 방문예약 안내를 확인하세요.
+        </div>
+        <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
+          관심고객등록을 통해 청약 일정, 공급 정보, 상담 안내를 빠르게 받아보실 수 있습니다.
+        </div>
+      </>
+    );
   }
+
+  return (
+    <div className={`${styles.text} ${isLoaded ? styles.showText : ''}`}>
+      고덕 수자인 하우스디 공식 홈페이지에서 주요 분양 정보를 확인하세요.
+    </div>
+  );
 };

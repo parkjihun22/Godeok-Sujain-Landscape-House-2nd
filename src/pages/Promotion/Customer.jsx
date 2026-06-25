@@ -67,7 +67,7 @@ export default function Customer() {
       <FixIcon />
 
       {/* 배너 */}
-      <Bener title="고덕 수자인 하우스디" />
+      <Bener title="관심고객등록" />
 
       {/* 네비게이션 탭 */}
       <MenuBar contents={promoMenu} />

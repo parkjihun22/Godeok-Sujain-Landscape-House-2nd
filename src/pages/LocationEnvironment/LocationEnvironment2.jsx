@@ -7,7 +7,6 @@ import MenuBar from "../../components/MenuBar/MenuBar";
 import Footer from "../../components/Footer/Footer";
 import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
-import Ready from "../../components/Ready/Ready";
 import page1 from "../../assets/LocationEnvironment/LocationEnvironment2/page1.jpg";
 
 

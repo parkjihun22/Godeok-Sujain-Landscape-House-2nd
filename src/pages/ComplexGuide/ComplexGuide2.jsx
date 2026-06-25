@@ -51,7 +51,7 @@ const ComplexGuide1 = () => {
 <Header isChanged={isScroll} />
 <FixIcon />
 
-<Bener title="단지안내" />
+<Bener title="호수 배치도" />
 <MenuBar contents={menuContents} />
 <div className={styles.textBox}>
   <div>평택 고덕국제화계획지구의 프리미엄 주거 설계</div>

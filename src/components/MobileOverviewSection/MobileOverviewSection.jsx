@@ -71,7 +71,7 @@ const items = [
         <img
           src={mobileMap2}
           className={styles.mapImage}
-          alt="고덕국제신도시 수자인풍경채 생활권 지도"
+          alt="고덕 수자인 하우스디 고덕국제신도시 생활권 지도"
         />
       </div>
     ),

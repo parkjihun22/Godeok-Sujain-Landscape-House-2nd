@@ -9,7 +9,6 @@ import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
 // 이미지 파일을 추가해야 합니다
 import page1 from "../../assets/Interior/Interior3/interior03.jpg";
-import Ready from "../../components/Ready/Ready";
 
 const Interior3 = () => {
 	const menuContents = [
@@ -53,7 +52,7 @@ const Interior3 = () => {
 			<Header isChanged={isScroll} />
 			<FixIcon />
 
-			<Bener title="인테리어" />
+			<Bener title="101㎡ 인테리어" />
 
 			<MenuBar contents={menuContents} />
 
