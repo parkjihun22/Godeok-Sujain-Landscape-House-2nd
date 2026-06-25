@@ -1,0 +1,923 @@
+﻿/* src/pages/Main/Main.module.scss */
+
+/* ================================
+   01. MAIN HERO - PC
+================================ */
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeInScale 1.4s ease-out forwards;
+}
+
+/* ?대?吏 ??媛?낆꽦???????ㅻ쾭?덉씠 */
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.05) 42%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  z-index: 1;
+}
+
+/* PC 硫붿씤 ?띿뒪???꾩튂 */
+.mainImageTextBox {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  width: 52vw;
+  min-width: 620px;
+
+  text-align: center;
+  font-family: 'Pretendard-Regular', sans-serif;
+
+  opacity: 0;
+  animation: heroFadeUp 1.2s ease forwards 0.35s;
+}
+
+/* ?꾩옣 ?꾩튂 ?ㅼ썙??*/
+.heroEyebrow {
+  font-size: 1vw;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 0.8vw;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* ?꾩옣紐?*/
+.heroTitle {
+  font-size: 2vw;
+  font-weight: 900;
+  color: #04002c;
+  margin: 0 0 1vw;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+/* ?듭떖 ?ㅼ썙??*/
+.heroKeyword {
+  font-size: 1vw;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #fff000;
+  margin-bottom: 0.5vw;
+  text-shadow: 0 2px 12px rgba(14, 0, 0, 0.584);
+}
+
+/* ?ㅻ챸臾?*/
+.heroDesc {
+  font-size: 0.8vw;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #04002c;
+  margin: 0 0 1.35vw;
+}
+
+/* 諛⑸Ц?덉빟 踰꾪듉 - PC */
+.heroReserveBtn {
+  border: none;
+  outline: none;
+  background: #fff000;
+  color: #01496f;
+
+  padding: 0.8vw 4vw;
+  border-radius: 800px;
+
+  font-size: 1vw;
+  font-weight: 900;
+  font-family: 'Pretendard-Regular', sans-serif;
+
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.heroReserveBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+/* ?ㅽ겕濡??쒖떆 */
+.heroScroll {
+  margin-top: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vw;
+
+  color: #ffffff;
+  font-size: 0.8vw;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.heroScroll i {
+  display: block;
+  width: 2px;
+  height: 5vw;
+  background: #ffffff;
+  animation: scrollMove 1.4s infinite;
+}
+/* ================================
+   SCROLL REVEAL ANIMATION
+================================ */
+
+.revealSection {
+  animation: revealUp 0.95s ease both;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   02. 湲곗〈 ?뱀뀡 怨듯넻
+================================ */
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+
+
+
+
+
+
+
+.section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4.2vw 5vw;
+  box-sizing: border-box;
+  background-color: #fff6ea;
+
+  .textBox {
+    width: min(94vw, 1640px);
+    margin: 0 auto;
+
+    .text1 {
+      font-family: 'Pretendard-Regular';
+      font-size: 1.5vw;
+      color: #c98f25;
+    }
+
+    .text2 {
+      display: inline-flex;
+      margin-top: 1.6vw;
+      text-decoration: none;
+      font-family: 'Pretendard-Regular';
+      font-size: 1.2vw;
+      font-weight: 800;
+      color: #01496f;
+    }
+  }
+}
+
+.section5 {
+  width: 100%;
+  height: 100%;
+}
+
+/* ================================
+   QUICK INFO SECTION - PC
+================================ */
+
+.quickInfoSection {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 0 8vw;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 5vw;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 28%),
+    linear-gradient(135deg, #01496f 0%, #06243b 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ?쇱そ ?띿뒪??*/
+.quickInfoLeft {
+  font-family: 'Pretendard-Regular', sans-serif;
+  transform: translateY(42px);
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+.quickInfoLabel {
+  margin: 0 0 1.1vw;
+  font-size: 0.9vw;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  color: #d4af37;
+}
+
+.quickInfoTitle {
+  margin: 0;
+  font-size: 3.15vw;
+  line-height: 1.18;
+  font-weight: 900;
+  letter-spacing: -0.065em;
+}
+
+.quickInfoDesc {
+  width: 86%;
+  margin: 1.6vw 0 0;
+  font-size: 1vw;
+  line-height: 1.85;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  word-break: keep-all;
+}
+
+/* ?ㅻⅨ履??レ옄 移대뱶 */
+.quickInfoRight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1vw;
+
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 0.9s ease 0.18s;
+}
+
+.quickInfoCard {
+  min-height: 14vw;
+  padding: 1.8vw;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.quickInfoCard:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
+}
+
+.quickInfoCard strong {
+  display: block;
+  margin-bottom: 0.8vw;
+
+  font-size: 3.4vw;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  color: #fff;
+}
+
+.quickInfoCard span {
+  display: block;
+  margin-bottom: 0.5vw;
+
+  font-size: 1vw;
+  font-weight: 900;
+  color: #d4af37;
+}
+
+.quickInfoCard p {
+  margin: 0;
+  font-size: 0.82vw;
+  line-height: 1.65;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ?붾㈃???ㅼ뼱?붿쓣 ??*/
+.quickInfoActive .quickInfoLeft {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.quickInfoActive .quickInfoRight {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* ================================
+   04. 紐⑤컮??硫붿씤
+================================ */
+
+.mobileMain {
+  width: 100%;
+  font-family: 'Pretendard-Regular', sans-serif;
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 82vh;
+    overflow: hidden;
+  }
+
+  .mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.88) contrast(1.08);
+  }
+}
+
+/* 紐⑤컮??Hero ?띿뒪??*/
+@media (max-width: 900px) {
+  .mobileMain .imageContainer {
+    height: 85vh;
+  }
+
+  .mobileMain .mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.88) contrast(1.08);
+  }
+
+  .mainImageTextBox1 {
+    position: absolute;
+
+    /* 紐⑤컮??湲???꾩껜 ?꾩튂 */
+    top: 25%;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 88vw;
+    text-align: center;
+    z-index: 2;
+
+    font-family: 'Pretendard-Regular', sans-serif;
+    opacity: 0;
+    animation: heroFadeUp 1.1s ease forwards 0.25s;
+  }
+
+  .heroEyebrow1 {
+    font-size: 3vw;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 1.8vw;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  .heroTitle1 {
+    font-size: 4vw;
+    font-weight: 900;
+    color: #04002c;
+    margin: 0 0 2.5vw;
+    letter-spacing: -0.055em;
+    line-height: 1.15;
+  }
+
+  .heroKeyword1 {
+    font-size: 2vw;
+    line-height: 1.5;
+    color: #fff000;
+    margin-bottom: 2.8vw;
+    text-shadow: 0 2px 12px rgba(12, 0, 0, 0.777);
+  }
+
+  .heroDesc1 {
+    font-size: 2vw;
+    line-height: 1.55;
+    color: #04002c;
+    font-weight: 800;
+    margin-bottom: 3.2vw;
+  }
+
+  .heroReserveBtn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    background: #fff000;
+    color: #01496f;
+
+    padding: 2vw 13vw;
+    border-radius: 800px;
+
+    font-size: 3vw;
+    font-weight: 900;
+    font-family: 'Pretendard-Regular', sans-serif;
+
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.26);
+  }
+
+  .heroScroll {
+    display: none;
+  }
+}
+
+
+
+
+
+
+.darkSection {
+  width: 100%;
+}
+
+/* ================================
+   06. ?좊땲硫붿씠??
+================================ */
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes scrollMove {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   07. 紐⑤컮??怨듯넻 ?덉쟾 泥섎━
+================================ */
+
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    height: auto;
+  }
+
+}
+
+/* ================================
+   08. PC / Mobile ?붾㈃ 理쒖쟻??蹂댁젙
+   - 湲곗〈 ?뱀뀡 援ъ“???좎??섍퀬, ?섎┝怨?怨쇳븳 ?뺣?留?以꾩엯?덈떎.
+================================ */
+
+@media (min-width: 901px) {
+  .imageContainer {
+    /* PC ?덉뼱濡??믪씠: 怨좎젙 ?곷떒 諛곕꼫? ?ㅻ뜑媛 ?덈뒗 ?곹깭?먯꽌??泥??붾㈃??怨쇳븯寃?湲몄뼱吏吏 ?딄쾶 ?⑸땲?? */
+    height: min(100vh, 900px);
+  }
+
+  .mainImageTextBox {
+    /* PC ?덉뼱濡?臾멸뎄 ?꾩튂: ?곷떒 怨좎젙 ?ㅻ뜑? 寃뱀튂吏 ?딆쑝硫댁꽌 以묒븰 硫붿떆吏媛 ?덉젙?곸쑝濡?蹂댁씠寃??⑸땲?? */
+    top: 24%;
+
+    /* PC ?덉뼱濡?臾멸뎄 ?? ??紐⑤땲?곗뿉?쒕룄 ?띿뒪?멸? 怨쇳븯寃??쇱?吏 ?딄쾶 ?쒗븳?⑸땲?? */
+    width: min(52vw, 760px);
+    min-width: 0;
+  }
+
+  .heroTitle {
+    /* PC ?덉뼱濡??쒕ぉ ?ш린: ?붾㈃ ?믪씠媛 ??? PC?먯꽌 ?쒕ぉ??怨쇳븯寃?而ㅼ?吏 ?딄쾶 ?⑸땲?? */
+    font-size: clamp(2rem, 2vw, 2.55rem);
+  }
+
+  .heroEyebrow,
+  .heroKeyword {
+    /* PC ?덉뼱濡?蹂댁“ 臾멸뎄 ?ш린: 硫붿씤 鍮꾩＜?쇱쓣 媛由ъ? ?딅룄濡??곸젙 ?ш린濡??쒗븳?⑸땲?? */
+    font-size: clamp(0.95rem, 0.95vw, 1.15rem);
+  }
+
+  .heroDesc {
+    /* PC ?덉뼱濡??ㅻ챸 ?ш린: 臾몄옣???щ윭 以꾩씠?대룄 踰꾪듉怨?寃뱀튂吏 ?딄쾶 ?⑸땲?? */
+    font-size: clamp(0.82rem, 0.75vw, 0.95rem);
+  }
+
+  .heroReserveBtn {
+    /* PC 諛⑸Ц?덉빟 踰꾪듉 ?щ갚: 踰꾪듉??怨쇳븯寃?而ㅼ졇 硫붿씤 ?대?吏 以묒떖??媛由ъ? ?딄쾶 ?⑸땲?? */
+    padding: clamp(12px, 0.75vw, 16px) clamp(56px, 3.4vw, 76px);
+    font-size: clamp(0.95rem, 0.9vw, 1.08rem);
+  }
+
+  .heroScroll {
+    /* PC ?ㅽ겕濡??덈궡 ?꾩튂: ?붾㈃ ?믪씠媛 ??쓣 ???섎떒?쇰줈 諛???섎━???꾩긽??以꾩엯?덈떎. */
+    margin-top: clamp(58px, 7vw, 110px);
+  }
+
+  .section4 {
+    /* PC ?좊땲???뱀뀡 ?믪씠: 100vh ?덉뿉 ?듭?濡?媛?먯? ?딄퀬 肄섑뀗痢??믪씠??留욎떠 ?덉젙?곸쑝濡?蹂댁뿬以띾땲?? */
+    min-height: auto;
+
+    /* PC ?좊땲???뱀뀡 ?щ갚: ?곷떒 怨좎젙 ?ㅻ뜑 ?꾨옒?먯꽌 ?댁슜???섎━吏 ?딅룄濡??꾩븘???щ갚????땅?덈떎. */
+    padding: clamp(34px, 3vw, 58px) clamp(36px, 4vw, 76px);
+  }
+
+  .section4 .textBox {
+    /* PC ?좊땲???대? ?? ?ㅻⅨ ?꾨━誘몄뾼 ?뱀뀡怨?媛숈? ?ㅼ??쇰줈 留욎땅?덈떎. */
+    width: min(92vw, 1580px);
+  }
+}
+
+@media (max-width: 900px) {
+  .imageContainer {
+    /* 紐⑤컮???덉뼱濡??믪씠: PC 鍮꾩쑉??洹몃?濡?異뺤냼?섏? ?딄퀬 紐⑤컮??泥??붾㈃??留욎땅?덈떎. */
+    height: 82svh;
+  }
+
+  .mainImageTextBox1 {
+    /* 紐⑤컮???덉뼱濡??띿뒪???? 醫뚯슦媛 遺숈? ?딅룄濡??덉젙?곸씤 ?щ갚???뺣낫?⑸땲?? */
+    width: min(88vw, 520px);
+  }
+
+  .heroTitle1 {
+    /* 紐⑤컮???덉뼱濡??쒕ぉ ?ш린: ?묒? 湲곌린?먯꽌 以꾨컮轅덉씠 怨쇳븯寃?而ㅼ?吏 ?딄쾶 ?⑸땲?? */
+    font-size: clamp(1.55rem, 7vw, 2.35rem);
+  }
+
+  .heroEyebrow1,
+  .heroKeyword1,
+  .heroDesc1 {
+    /* 紐⑤컮???덉뼱濡?蹂댁“ 臾멸뎄 ?ш린: ???붾㈃?먯꽌 踰꾪듉源뚯? 蹂댁씠?꾨줉 ?ш린瑜??쒗븳?⑸땲?? */
+    font-size: clamp(0.82rem, 3.1vw, 1rem);
+  }
+
+  .heroReserveBtn1 {
+    /* 紐⑤컮??諛⑸Ц?덉빟 踰꾪듉: ?먭????곗튂 ?ш린???좎??섎릺 怨쇳븳 媛濡??뺤옣??以꾩엯?덈떎. */
+    padding: 13px 42px;
+    font-size: clamp(0.95rem, 3.4vw, 1.1rem);
+  }
+
+  .section4 {
+    /* 紐⑤컮???좊땲???뱀뀡 ?щ갚: ?섎떒 怨좎젙 踰꾪듉怨?寃뱀튂吏 ?딄쾶 ?꾨옒 ?щ갚???뺣낫?⑸땲?? */
+    width: 100%;
+    min-height: auto;
+    padding: 12vw 4vw 18vw;
+  }
+
+  .section4 .textBox {
+    /* 紐⑤컮???좊땲???대? ?? 100vw濡??명븳 媛濡?諛由??놁씠 ?붾㈃ ?덉뿉 ?ㅼ뼱?ㅺ쾶 ?⑸땲?? */
+    width: 100%;
+  }
+}
+
+/* ================================
+   09. 메인 히어로 프리미엄 보정
+   - 기존 이미지는 유지하되, 밝은 홍보 배너 느낌을 줄이고
+     고급 분양 대표 홈페이지처럼 차분한 첫 인상을 만듭니다.
+================================ */
+
+@keyframes heroPremiumFadeUp {
+  0% {
+    /* 처음 진입 시 투명도: 텍스트가 갑자기 튀어나오지 않도록 숨긴 상태에서 시작합니다. */
+    opacity: 0;
+
+    /* 처음 진입 시 위치: 아래에서 살짝 올라오는 고급스러운 등장감을 만듭니다. */
+    transform: translateY(18px);
+  }
+
+  100% {
+    /* 완료 투명도: 첫 화면 카피가 또렷하게 읽히도록 합니다. */
+    opacity: 1;
+
+    /* 완료 위치: 원래 배치 지점에 자연스럽게 안착시킵니다. */
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 901px) {
+  .imageContainer {
+    /* PC 히어로 높이: 첫 화면을 꽉 채우되 과하게 길어 보이지 않게 제한합니다. */
+    height: min(100svh, 900px);
+
+    /* 이미지 로딩 전 배경색: 어두운 프리미엄 톤으로 빈 화면이 보이지 않게 합니다. */
+    background: #06131c;
+  }
+
+  .mainImage {
+    /* PC 이미지 초점: 건물 하단과 조경이 살아나도록 이미지 기준점을 아래쪽에 둡니다. */
+    object-position: center bottom;
+
+    /* PC 이미지 톤: 지나치게 밝은 하늘과 선명한 색감을 눌러 고급스럽게 보정합니다. */
+    filter: brightness(0.82) saturate(0.86) contrast(1.06);
+  }
+
+  .overlay {
+    /* PC 좌측 그라데이션: 좌측 카피 영역의 가독성을 확보하고 이미지와 자연스럽게 섞습니다. */
+    background:
+      linear-gradient(90deg, rgba(5, 18, 27, 0.82) 0%, rgba(5, 18, 27, 0.56) 34%, rgba(5, 18, 27, 0.14) 66%, rgba(5, 18, 27, 0.32) 100%),
+      linear-gradient(180deg, rgba(5, 18, 27, 0.32) 0%, rgba(5, 18, 27, 0.06) 42%, rgba(5, 18, 27, 0.72) 100%);
+  }
+
+  .mainImageTextBox {
+    /* PC 카피 위치: 중앙 배너 느낌을 없애고 프리미엄 브랜드 사이트처럼 좌측에 배치합니다. */
+    top: 50%;
+    left: clamp(72px, 9vw, 168px);
+
+    /* PC 카피 이동값: 좌측 정렬 구조에 맞춰 기존 중앙 정렬 이동값을 제거합니다. */
+    transform: translateY(-48%);
+
+    /* PC 카피 너비: 긴 문장이 한 줄로 늘어지지 않게 읽기 좋은 폭으로 제한합니다. */
+    width: min(38vw, 620px);
+    min-width: 0;
+
+    /* PC 카피 정렬: 대표 홈페이지의 차분한 첫 인상을 위해 좌측 정렬로 정리합니다. */
+    text-align: left;
+
+    /* PC 카피 애니메이션: 기존 중앙 기준 애니메이션 대신 좌측 배치용 움직임을 사용합니다. */
+    animation: heroPremiumFadeUp 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.25s;
+  }
+
+  .heroEyebrow {
+    /* PC 상단 문구 색상: 흰색 강조 대신 골드 포인트로 브랜드감을 더합니다. */
+    color: #d8b76a;
+
+    /* PC 상단 문구 크기: 제목보다 앞서 보이지 않도록 작고 단정하게 조정합니다. */
+    font-size: clamp(0.78rem, 0.74vw, 0.95rem);
+
+    /* PC 상단 문구 자간: 프리미엄 라벨처럼 보이도록 여백을 넓힙니다. */
+    letter-spacing: 0.14em;
+
+    /* PC 상단 문구 그림자: 번지는 느낌을 줄여 텍스트를 선명하게 만듭니다. */
+    text-shadow: none;
+    margin-bottom: clamp(12px, 1vw, 18px);
+  }
+
+  .heroTitle {
+    /* PC 제목 크기: 첫 화면의 주인공이 되도록 키우되 화면을 압도하지 않게 제한합니다. */
+    font-size: clamp(3rem, 4.15vw, 5.4rem);
+
+    /* PC 제목 줄간격: 두 줄이 될 때도 고급스럽게 밀도 있는 인상을 만듭니다. */
+    line-height: 1.05;
+
+    /* PC 제목 색상: 이미지 위에서 안정적으로 읽히도록 흰색으로 변경합니다. */
+    color: #ffffff;
+
+    /* PC 제목 그림자: 밝은 하늘과 건물 위에서도 또렷하게 보이도록 깊이를 줍니다. */
+    text-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+    margin-bottom: clamp(18px, 1.5vw, 28px);
+  }
+
+  .heroKeyword {
+    /* PC 핵심 정보 색상: 강한 형광 노랑을 줄이고 고급스러운 샴페인 골드로 바꿉니다. */
+    color: #f0d894;
+
+    /* PC 핵심 정보 크기: 정보성은 유지하되 광고 문구처럼 튀지 않게 정리합니다. */
+    font-size: clamp(0.98rem, 0.92vw, 1.16rem);
+
+    /* PC 핵심 정보 줄간격: 3줄 정보가 촘촘하게 뭉치지 않도록 숨을 줍니다. */
+    line-height: 1.72;
+
+    /* PC 핵심 정보 그림자: 번쩍이는 느낌을 줄이기 위해 제거합니다. */
+    text-shadow: none;
+    margin-bottom: clamp(18px, 1.4vw, 26px);
+  }
+
+  .heroDesc {
+    /* PC 설명문 색상: 이미지 위에서도 읽히되 제목보다 한 단계 낮은 톤으로 둡니다. */
+    color: rgba(255, 255, 255, 0.78);
+
+    /* PC 설명문 크기: SEO 텍스트의 가독성을 유지하면서 과한 존재감을 줄입니다. */
+    font-size: clamp(0.9rem, 0.82vw, 1.04rem);
+
+    /* PC 설명문 줄간격: 여러 줄 설명이 답답하지 않게 보이도록 조정합니다. */
+    line-height: 1.82;
+
+    /* PC 설명문 폭: 문장이 너무 길게 늘어지는 것을 막습니다. */
+    max-width: 540px;
+    margin-bottom: clamp(24px, 1.8vw, 34px);
+    text-shadow: none;
+  }
+
+  .heroReserveBtn {
+    /* PC 버튼 배경: 형광 노랑 대신 밝은 프리미엄 버튼으로 첫 화면의 톤을 낮춥니다. */
+    background: rgba(255, 255, 255, 0.94);
+
+    /* PC 버튼 글자색: 브랜드 네이비를 유지해 명확한 CTA로 보이게 합니다. */
+    color: #01496f;
+
+    /* PC 버튼 테두리: 골드 라인을 더해 고급스러운 마감을 만듭니다. */
+    border: 1px solid rgba(216, 183, 106, 0.62);
+
+    /* PC 버튼 라운드: 과한 알약 형태를 줄이고 단정한 버튼으로 정리합니다. */
+    border-radius: 8px;
+
+    /* PC 버튼 여백: 클릭 영역은 충분히 확보하되 배너처럼 커 보이지 않게 합니다. */
+    padding: clamp(13px, 0.85vw, 17px) clamp(40px, 2.7vw, 58px);
+
+    /* PC 버튼 그림자: 이미지 위에 떠 있는 깊이감을 만듭니다. */
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+  }
+
+  .heroReserveBtn:hover {
+    /* PC 버튼 호버: 마우스를 올렸을 때 은은하게 밝아져 클릭 가능성을 보여줍니다. */
+    background: #ffffff;
+
+    /* PC 버튼 호버 이동: 과한 움직임 없이 살짝 반응하도록 합니다. */
+    transform: translateY(-2px);
+  }
+
+  .heroScroll {
+    /* PC 스크롤 안내: 첫 화면의 시선을 분산시키지 않도록 이번 히어로에서는 숨깁니다. */
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobileMain .imageContainer {
+    /* 모바일 히어로 높이: 건물이 과하게 크게 느껴지지 않도록 첫 화면 높이를 절제합니다. */
+    height: min(78svh, 720px);
+
+    /* 모바일 최소 높이: 작은 기기에서도 카피와 버튼이 안정적으로 들어가도록 합니다. */
+    min-height: 560px;
+
+    /* 모바일 이미지 로딩 전 배경색: 화면 전환 시 밝은 빈 배경이 보이지 않게 합니다. */
+    background: #06131c;
+  }
+
+  .mobileMain .mainImage {
+    /* 모바일 이미지 초점: 단지와 조경이 하단에 안정적으로 보이도록 기준점을 둡니다. */
+    object-position: center bottom;
+
+    /* 모바일 이미지 톤: 밝고 가벼운 느낌을 줄이고 텍스트 가독성을 확보합니다. */
+    filter: brightness(0.76) saturate(0.86) contrast(1.06);
+  }
+
+  .mobileMain .overlay {
+    /* 모바일 그라데이션: 카피 영역은 어둡게, 하단 이미지는 자연스럽게 보이도록 연결합니다. */
+    background:
+      linear-gradient(180deg, rgba(5, 18, 27, 0.22) 0%, rgba(5, 18, 27, 0.54) 38%, rgba(5, 18, 27, 0.74) 100%),
+      linear-gradient(90deg, rgba(5, 18, 27, 0.72) 0%, rgba(5, 18, 27, 0.38) 62%, rgba(5, 18, 27, 0.18) 100%);
+  }
+
+  .mainImageTextBox1 {
+    /* 모바일 카피 위치: 중앙 정렬을 벗어나 좌측 상단에 차분하게 배치합니다. */
+    top: clamp(94px, 16vh, 138px);
+    left: 6vw;
+
+    /* 모바일 카피 이동값: 기존 중앙 이동값을 제거해 글자가 흔들리지 않게 합니다. */
+    transform: none;
+
+    /* 모바일 카피 폭: 우측 여백을 남겨 이미지와 함께 숨 쉴 수 있게 합니다. */
+    width: min(78vw, 420px);
+
+    /* 모바일 카피 정렬: 프리미엄 브랜딩에 맞춰 좌측 정렬로 정돈합니다. */
+    text-align: left;
+
+    /* 모바일 카피 애니메이션: 가볍게 올라오며 자연스럽게 등장합니다. */
+    animation: heroPremiumFadeUp 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.22s;
+  }
+
+  .heroEyebrow1 {
+    /* 모바일 상단 문구 색상: 흰색 대신 골드 포인트로 브랜드감을 살립니다. */
+    color: #d8b76a;
+
+    /* 모바일 상단 문구 크기: 첫 줄이 제목보다 강해 보이지 않게 낮춥니다. */
+    font-size: clamp(0.72rem, 2.7vw, 0.86rem);
+
+    /* 모바일 상단 문구 자간: 작은 화면에서도 라벨처럼 또렷하게 보이게 합니다. */
+    letter-spacing: 0.12em;
+    text-shadow: none;
+    margin-bottom: 10px;
+  }
+
+  .heroTitle1 {
+    /* 모바일 제목 크기: 고급스러운 임팩트는 유지하되 화면을 꽉 막지 않게 제한합니다. */
+    font-size: clamp(2.05rem, 8.4vw, 3rem);
+
+    /* 모바일 제목 줄간격: 긴 단지명이 두 줄로 떨어져도 안정적으로 보이게 합니다. */
+    line-height: 1.08;
+
+    /* 모바일 제목 색상: 이미지 위에서 선명하게 읽히도록 흰색으로 바꿉니다. */
+    color: #ffffff;
+
+    /* 모바일 제목 그림자: 밝은 배경 위에서도 글자가 묻히지 않도록 합니다. */
+    text-shadow: 0 12px 28px rgba(0, 0, 0, 0.36);
+    margin-bottom: 14px;
+  }
+
+  .heroKeyword1 {
+    /* 모바일 핵심 정보 색상: 기존 형광 노랑을 낮춰 고급스러운 골드 톤으로 정리합니다. */
+    color: #f0d894;
+
+    /* 모바일 핵심 정보 크기: 정보는 읽히되 제목과 경쟁하지 않게 조정합니다. */
+    font-size: clamp(0.9rem, 3.25vw, 1.05rem);
+
+    /* 모바일 핵심 정보 줄간격: 여러 줄 정보가 답답하게 붙지 않도록 합니다. */
+    line-height: 1.56;
+    text-shadow: none;
+    margin-bottom: 13px;
+  }
+
+  .heroDesc1 {
+    /* 모바일 설명문 색상: 하얀 제목 아래 부드럽게 읽히는 보조 톤으로 둡니다. */
+    color: rgba(255, 255, 255, 0.78);
+
+    /* 모바일 설명문 크기: 작은 화면에서 문장이 뭉개지지 않는 최소 크기를 유지합니다. */
+    font-size: clamp(0.78rem, 2.9vw, 0.92rem);
+
+    /* 모바일 설명문 줄간격: SEO 문장이 여러 줄이어도 편하게 읽히게 합니다. */
+    line-height: 1.65;
+    text-shadow: none;
+    margin-bottom: 18px;
+  }
+
+  .heroReserveBtn1 {
+    /* 모바일 버튼 배경: 노란 CTA를 줄이고 깨끗한 흰색 버튼으로 고급스럽게 정리합니다. */
+    background: rgba(255, 255, 255, 0.94);
+
+    /* 모바일 버튼 글자색: 브랜드 네이비로 CTA 성격을 유지합니다. */
+    color: #01496f;
+
+    /* 모바일 버튼 테두리: 작은 화면에서도 버튼 외곽이 또렷하게 보이도록 합니다. */
+    border: 1px solid rgba(216, 183, 106, 0.62);
+
+    /* 모바일 버튼 라운드: 과한 알약 형태를 줄여 단정한 브랜드 버튼으로 만듭니다. */
+    border-radius: 8px;
+
+    /* 모바일 버튼 여백: 엄지로 누르기 좋은 높이는 유지하고 가로 폭은 줄입니다. */
+    padding: 12px 30px;
+
+    /* 모바일 버튼 그림자: 이미지 위에 자연스럽게 떠 보이도록 합니다. */
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+  }
+}

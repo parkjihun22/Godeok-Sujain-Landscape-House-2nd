@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- 1) 기본 메타 -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 2) Favicon & PWA -->
+  <link rel="icon" href="%PUBLIC_URL%/logo512.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo512.ico" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- 3) 기본 SEO 메타: 페이지별 세부 메타는 React SEO 컴포넌트에서 관리 -->
+  <title>고덕 수자인 하우스디</title>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+  <!-- 4) 웹마스터 검증 -->
+  <meta name="naver-site-verification" content="c47390827322214cdc0a68f13c413412a6ca264b" />
+  <meta name="google-site-verification" content="MhxpKgDNhlo9Xst_-sGfScESV4hu7hqhSig2e2zggVY" />
+
+  <!-- 5) RSS, Sitemap -->
+  <link rel="alternate" type="application/rss+xml" title="고덕 수자인 하우스디RSS"
+    href="https://www.sujain-modellhouse.co.kr/rss.xml" />
+  <link rel="sitemap" type="application/xml" title="사이트맵" href="https://www.sujain-modellhouse.co.kr/sitemap.xml" />
+
+  <!-- 6) DNS-Prefetch & 폰트 프리로드 -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Roboto:wght@700&display=swap"
+    onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Roboto:wght@700&display=swap" />
+  </noscript>
+
+</head>
+
+<body>
+  <noscript>
+    평택 고덕 수자인풍경채ㅣ☎️(대표)1533-8848ㅣ평택 고덕국제신도시 수자인풍경채 ㅣ견본주택ㅣ모델하우스ㅣ위치ㅣ청약ㅣ분양ㅣ분양가ㅣ공급정보ㅣ잔여세대문의ㅣ고객센터ㅣ방문예약
+  </noscript>
+  <div id="root"></div>
+
+  <!-- ====== FAMILY SITE 백링크영역 시작 ====== -->
+  <footer style="background:#292929; color:#fff; padding:1px 0 2px 0; text-align:center;">
+    <div class="family-site-rolling-wrap">
+      <div class="family-site-rolling"></div>
+    </div>
+  </footer>
+  <style>
+    .family-site-rolling-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: #292929;
+      padding: 3px 0 2px 0;
+      position: relative
+    }
+
+    .family-site-rolling {
+      display: inline-block;
+      white-space: nowrap;
+      animation: rolling 55s linear infinite
+    }
+
+    .family-site-rolling span,
+    .family-site-rolling a {
+      font-size: 12px;
+      color: #aaa;
+      margin: 0 2px;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: color .2s
+    }
+
+    .family-site-rolling a:hover {
+      color: #fff;
+      text-decoration: underline
+    }
+
+    @keyframes rolling {
+      0% {
+        transform: translateX(0%)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    @media (max-width:600px) {
+
+      .family-site-rolling span,
+      .family-site-rolling a {
+        font-size: 13px !important;
+        margin: 0 2px !important
+      }
+
+      .family-site-rolling-wrap {
+        padding: 7px 0 2px 0
+      }
+    }
+  </style>
+  <script>
+    const sites = [
+      { url: "https://www.beyinegzersizi.com/", name: "브레인시티 메디스파크" },
+      { url: "https://www.abcya4.com/", name: "천안 휴먼빌 퍼스트시티" },
+      { url: "https://www.verficktescheisse.com/", name: "평택화양 신영지웰" },
+      { url: "https://niceoi.kr/", name: "브레인시티 앤네이처 미래도" },
+      { url: "https://eliasart.kr/", name: "평택 브레인시티 푸르지오" },
+      { url: "https://intercs.co.kr/", name: "청주 센트럴 더 플래티넘" },
+      { url: "https://hangboggift.kr/", name: "대전 문화공원 수자인" },
+      { url: "https://www.bunyang-114.com/", name: "김포 칸타빌 에디션" },
+      { url: "https://tradexmeds.com/", name: "더샵 신문 그리니티" },
+      { url: "https://www.vaaclubs.com/", name: "평택 브레인시티 수자인" },
+      { url: "https://www.lotte-castl.co.kr/", name: "이천 롯데캐슬 3차" },
+      { url: "https://www.kf-liria.com/", name: "아산 모종 서한이다음" },
+      { url: "https://www.layershop.kr/", name: "천안아산역 이편한세상시티" },
+      { url: "https://www.cssdesign.kr/", name: "시흥 거모지구 대방엘리움" },
+      { url: "https://www.ifors2020.kr/", name: "트리븐 서산" },
+      { url: "https://www.dwbsongs.com/", name: "엘리프 검단 포레듀" },
+      { url: "https://www.a7lashare.com/", name: "모종 삼일 파라뷰" },
+      { url: "https://www.sketchs.co.kr/", name: "브레인시티 비스타동원" },
+      { url: "https://sinbiapt.co.kr/", name: "오산 센트럴시티 운암뜰" },
+      { url: "https://www.locamobility.co.kr/", name: "평택 브레인시티 메디스파크" },
+      { url: "https://delidilly.co.kr/", name: "효자 시그니처 998" },
+      { url: "https://www.theporest.co.kr/", name: "대전 용전 마루힐" },
+      { url: "https://paragon-modelhouse.co.kr/", name: "동탄 파라곤 3차" },
+      { url: "https://www.leecols.kr/", name: "평택 화양 서희스타힐스" },
+      { url: "https://www.doosanweavethezenith.co.kr/", name: "천안 두산위브 더제니스" },
+      { url: "https://www.diarivalencia.com/", name: "고덕 수자인풍경채" },
+      { url: "https://www.sujain-modellhouse.co.kr/", name: "고덕 수자인 하우스디" },
+      { url: "https://www.godeok-athera.co.kr/", name: "고덕신도시 아테라" },
+      { url: "https://www.elifgodeok-central.co.kr/", name: "엘리프 고덕 센트럴하이" },
+      { url: "https://www.ianflexity.co.kr/", name: "용인 이안 플렉시티" },
+      { url: "https://xn--289apct1w55qukgde446a3qjlygg4b.kr/", name: "평택 고덕 수자인풍경채" },
+      { url: "https://hillstategodeok-elisth.co.kr/", name: "힐스테이트 고덕엘리스트" },
+    ];
+    function shuffle(a) { return a.map(v => [v, Math.random()]).sort((x, y) => x[1] - y[1]).map(v => v[0]) }
+    document.addEventListener("DOMContentLoaded", function () {
+      const shuffled = shuffle(sites);
+      let html = '<span>FAMILY SITE · </span>';
+      shuffled.forEach((s, i) => { html += `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`; if (i < shuffled.length - 1) html += '<span>·</span>'; });
+      document.querySelector('.family-site-rolling').innerHTML = html;
+    });
+  </script>
+  <!-- ====== FAMILY SITE 백링크영역 끝 ====== -->
+</body>
+
+</html>
