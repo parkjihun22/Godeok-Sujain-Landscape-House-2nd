@@ -32,7 +32,7 @@
   margin-bottom: 0.55vw;
 
   /* 글자 크기: 작은 보조 라벨로 보이게 합니다. */
-  font-size: 1vXw;
+  font-size: 1vw;
 
   /* 글자 굵기: 작은 글자의 선명도를 확보합니다. */
   font-weight: 900;
@@ -503,7 +503,7 @@
 
   .header h2 {
     /* 모바일 제목 크기: 섹션 내부 제목으로 적절한 크기입니다. */
-    font-size: 5.2vw;
+    font-size: 3vw;
   }
 
   .header p {
@@ -511,10 +511,10 @@
     max-width: none;
 
     /* 모바일 설명 위 여백입니다. */
-    margin-top: 2.4vw;
+    margin-top: 1vw;
 
     /* 모바일 설명 크기: 긴 문장이 읽기 편한 크기입니다. */
-    font-size: 3.35vw;
+    font-size: 2vw;
   }
 
   .tabList {
@@ -528,16 +528,16 @@
   .tab,
   .activeTab {
     /* 모바일 탭 높이: 터치하기 쉬운 크기입니다. */
-    min-height: 10vw;
+    min-height: 8vw;
 
     /* 모바일 탭 최소 폭: 타입명이 안정적으로 들어갑니다. */
-    min-width: 19vw;
+    min-width: 15vw;
 
     /* 모바일 탭 여백: 버튼 안쪽 공간입니다. */
     padding: 2.4vw 3.2vw;
 
     /* 모바일 탭 글자 크기입니다. */
-    font-size: 3.3vw;
+    font-size: 3vw;
   }
 
   .viewer {
@@ -589,7 +589,7 @@
 
   .info p {
     /* 모바일 설명 크기입니다. */
-    font-size: 3.2vw;
+    font-size: 3vw;
   }
 }
 
@@ -606,12 +606,12 @@
 
   .header h2 {
     /* 모바일 유니트 제목 크기: 긴 제목이 과하게 커져 잘리지 않도록 제한합니다. */
-    font-size: 2.5w;
+    font-size: 2w;
   }
 
   .header p {
     /* 모바일 유니트 설명 크기: 탭과 이미지가 아래로 과하게 밀리지 않게 합니다. */
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
 
   .tab,
