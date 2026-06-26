@@ -19,6 +19,23 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <link rel="canonical" href="https://www.sujain-modellhouse.co.kr/" />
 
+  <!-- 3-1) SNS / crawler fallback: React Helmet ?? ??? ?? ?? ??? ?????. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="?? ??? ????" />
+  <meta property="og:title" content="?? ??? ???? | ?? ??????? ???" />
+  <meta property="og:description" content="?? ??? ???? ?? ???????. ?? ????????? A-67BL ??, ????, ????, ????, ???, E-?????? ???? ??? ?????." />
+  <meta property="og:url" content="https://www.sujain-modellhouse.co.kr/" />
+  <meta property="og:image" content="https://www.sujain-modellhouse.co.kr/img/og/main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="?? ??? ???? | ?? ??????? ???" />
+  <meta name="twitter:description" content="?? ????????? A-67BL ?? ??? ???? ????, ????, ???, E-?????? ???? ??." />
+  <meta name="twitter:image" content="https://www.sujain-modellhouse.co.kr/img/og/main.jpg" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#01496f" />
+
   <!-- 4) 웹마스터 검증 -->
   <meta name="naver-site-verification" content="c47390827322214cdc0a68f13c413412a6ca264b" />
   <meta name="google-site-verification" content="MhxpKgDNhlo9Xst_-sGfScESV4hu7hqhSig2e2zggVY" />
@@ -40,6 +57,66 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Roboto:wght@700&display=swap" />
   </noscript>
+
+
+  <!-- 7) Static structured data: JS ??? ??? ?? ??? ??? ?????. -->
+  <script id="static-seo-jsonld" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.sujain-modellhouse.co.kr/#organization",
+          "name": "?? ??? ????",
+          "url": "https://www.sujain-modellhouse.co.kr/",
+          "logo": "https://www.sujain-modellhouse.co.kr/logo512.ico",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+82-1533-8848",
+            "contactType": "customer service",
+            "areaServed": "KR",
+            "availableLanguage": "Korean"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.sujain-modellhouse.co.kr/#website",
+          "url": "https://www.sujain-modellhouse.co.kr/",
+          "name": "?? ??? ????",
+          "inLanguage": "ko-KR",
+          "publisher": { "@id": "https://www.sujain-modellhouse.co.kr/#organization" }
+        },
+        {
+          "@type": "ApartmentComplex",
+          "@id": "https://www.sujain-modellhouse.co.kr/#apartment",
+          "name": "?? ??? ????",
+          "url": "https://www.sujain-modellhouse.co.kr/",
+          "description": "?? ????????? A-67BL? ???? ?? ??? ???? ?? ?? ???????.",
+          "telephone": "1533-8848",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "KR",
+            "addressRegion": "???",
+            "addressLocality": "???",
+            "streetAddress": "????????? A-67BL"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "?? ??? ???? ?? ??",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "SiteNavigationElement", "name": "????", "url": "https://www.sujain-modellhouse.co.kr/BusinessGuide/intro" } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "SiteNavigationElement", "name": "????", "url": "https://www.sujain-modellhouse.co.kr/BusinessGuide/documents" } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "SiteNavigationElement", "name": "????", "url": "https://www.sujain-modellhouse.co.kr/LocationEnvironment/intro" } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "SiteNavigationElement", "name": "????", "url": "https://www.sujain-modellhouse.co.kr/ComplexGuide/intro" } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "SiteNavigationElement", "name": "????", "url": "https://www.sujain-modellhouse.co.kr/FloorPlan/59A" } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "SiteNavigationElement", "name": "E-?????", "url": "https://www.sujain-modellhouse.co.kr/FloorPlan/Emodel" } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "SiteNavigationElement", "name": "??????", "url": "https://www.sujain-modellhouse.co.kr/Promotion/Customer" } }
+          ]
+        }
+      ]
+    }
+  </script>
 
 </head>
 

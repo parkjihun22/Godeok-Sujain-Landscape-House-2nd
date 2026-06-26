@@ -1,26 +1,19 @@
 :root {
-  --mobile-menu-top: 15vh;
+  --mobile-menu-top: 24vw;
 }
 
 /* 오른쪽 슬라이드 메뉴 전체 */
 .container {
   position: fixed;
-
-  /* 메뉴가 시작되는 높이 */
   top: var(--mobile-menu-top);
-
-  /* 오른쪽 고정 핵심 */
   right: 0;
   left: auto;
 
   display: flex;
   flex-direction: column;
 
-  /* 메뉴 폭 조절 */
   width: 60%;
-
-  /* 메뉴 높이 */
-  height: calc(100vh - var(--mobile-menu-top));
+  height: calc(100dvh - var(--mobile-menu-top));
 
   background: #fff;
   overflow-y: auto;

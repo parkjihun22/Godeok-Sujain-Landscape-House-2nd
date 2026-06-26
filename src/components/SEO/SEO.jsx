@@ -102,6 +102,34 @@ const buildNavigationSchema = () => ({
   })),
 });
 
+const buildProjectSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "ApartmentComplex",
+  "@id": `${siteSeo.siteUrl}/#apartment`,
+  name: siteSeo.siteName,
+  url: siteSeo.siteUrl,
+  description: siteSeo.defaultDescription,
+  image: getAbsoluteUrl(siteSeo.ogImage),
+  telephone: siteSeo.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "KR",
+    addressRegion: "경기도",
+    addressLocality: "평택시",
+    streetAddress: "고덕국제화계획지구 A-67BL",
+  },
+  brand: [
+    {
+      "@type": "Brand",
+      name: "수자인",
+    },
+    {
+      "@type": "Brand",
+      name: "hausD",
+    },
+  ],
+});
+
 const buildWebPageSchema = (page) => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -115,10 +143,14 @@ const buildWebPageSchema = (page) => ({
   breadcrumb: {
     "@id": `${getAbsoluteUrl(page.path)}#breadcrumb`,
   },
+  keywords: siteSeo.keywords.join(", "),
   publisher: { "@id": siteSeo.organizationId },
   primaryImageOfPage: {
     "@type": "ImageObject",
     url: getAbsoluteUrl(page.image || siteSeo.ogImage),
+  },
+  mainEntity: {
+    "@id": `${siteSeo.siteUrl}/#apartment`,
   },
 });
 
@@ -129,6 +161,7 @@ const SEO = ({ page }) => {
   const imageUrl = getAbsoluteUrl(page.image || siteSeo.ogImage);
   const schemas = [
     buildWebsiteSchema(),
+    buildProjectSchema(),
     buildNavigationSchema(),
     buildWebPageSchema(page),
     buildBreadcrumbSchema(page),
