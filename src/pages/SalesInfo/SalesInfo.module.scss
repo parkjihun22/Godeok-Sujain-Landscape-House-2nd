@@ -276,7 +276,7 @@
     margin: 0;
 
     /* 제목 크기: 모집공고 페이지의 핵심 타이틀입니다. */
-    font-size: 2.6vw;
+    font-size: 2vw;
 
     /* 제목 굵기: 대표 홈페이지다운 무게감을 줍니다. */
     font-weight: 900;
@@ -299,7 +299,7 @@
     max-width: 660px;
 
     /* 설명 글자 크기: SEO 문장도 읽기 좋은 크기입니다. */
-    font-size: 0.94vw;
+    font-size: 0.8vw;
 
     /* 설명 줄 높이: 긴 문장을 편하게 읽게 합니다. */
     line-height: 1.78;
@@ -365,7 +365,7 @@
     display: block;
 
     /* 카드 값 크기: PC에서 한눈에 읽히는 크기입니다. */
-    font-size: 0.98vw;
+    font-size: 0.8vw;
 
     /* 카드 값 굵기: 정보 위계를 높입니다. */
     font-weight: 900;
@@ -723,7 +723,7 @@
 
     .announcementIntro h2 {
         /* 모집공고 제목 모바일 크기: 첫 화면 제목의 크기입니다. */
-        font-size: 6vw;
+        font-size: 4vw;
 
         /* 모집공고 제목 줄 높이: 두 줄 이상일 때 간격입니다. */
         line-height: 1.2;
@@ -734,7 +734,7 @@
         margin-top: 3vw;
 
         /* 모집공고 설명 글자 크기: 모바일 본문 읽기 크기입니다. */
-        font-size: 3vw;
+        font-size: 2.5vw;
 
         /* 모집공고 설명 줄 높이: 긴 문장을 편하게 읽도록 합니다. */
         line-height: 1.7;
@@ -763,7 +763,7 @@
 
     .announcementCard strong {
         /* 모집공고 요약 카드 핵심 문구 크기입니다. */
-        font-size: 3.1vw;
+        font-size: 2.5vw;
     }
 
     .summaryPdfButton {
@@ -788,7 +788,7 @@
 
     .summaryPdfText strong {
         /* 모집공고 PDF 버튼 제목 글자 크기입니다. */
-        font-size: 3.4vw;
+        font-size: 3vw;
     }
 
     .summaryPdfText em {
@@ -818,13 +818,13 @@
 
     .announcementPreviewHead h3 {
         /* 모집공고 미리보기 제목 모바일 크기입니다. */
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .announcementPreviewHead p {
         /* 모집공고 미리보기 설명 위 여백과 글자 크기입니다. */
         margin-top: 2.4vw;
-        font-size: 2.9vw;
+        font-size: 2.5vw;
         line-height: 1.68;
     }
 
