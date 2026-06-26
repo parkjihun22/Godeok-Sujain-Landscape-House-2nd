@@ -211,7 +211,7 @@
         width: min(90vw, 560px);
 
         /* 모바일 문구 여백: 메뉴바 아래 공간입니다. */
-        margin: 9vw auto 5vw;
+        margin: 7vw auto 4.5vw;
 
         /* 기존 큰 모바일 폰트 값을 덮어쓰기 위한 기본값입니다. */
         font-size: initial;
@@ -219,21 +219,21 @@
 
     .textBox div:nth-of-type(1) {
         /* 모바일 첫 번째 문구 크기입니다. */
-        font-size: 5.2vw;
+        font-size: 3vw;
         line-height: 1.35;
     }
 
     .textBox div:nth-of-type(2) {
         /* 모바일 핵심 문구 크기입니다. */
         margin-top: 1.4vw;
-        font-size: 6.3vw;
-        line-height: 1.28;
+        font-size: 3vw;
+        line-height: 1.34;
     }
 
     .textBox div:nth-of-type(3) {
         /* 모바일 설명 문구 크기입니다. */
         margin-top: 3vw;
-        font-size: 3vw;
+        font-size: 2.5vw;
         line-height: 1.72;
     }
 

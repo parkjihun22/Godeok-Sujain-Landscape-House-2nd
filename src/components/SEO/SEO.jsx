@@ -19,6 +19,7 @@ const getNavigationLinks = () =>
 const findNavigationGroup = (path) =>
   seoNavigation.find((item) => {
     const normalizedPath = path.toLowerCase();
+
     return (
       item.path.toLowerCase() === normalizedPath ||
       item.children?.some((child) => child.path.toLowerCase() === normalizedPath)
@@ -90,7 +91,7 @@ const buildWebsiteSchema = () => ({
 const buildNavigationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "고덕 수자인 하우스디 주요 메뉴",
+  name: siteSeo.project.navigationSchemaName,
   itemListElement: getNavigationLinks().map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -113,21 +114,15 @@ const buildProjectSchema = () => ({
   telephone: siteSeo.phone,
   address: {
     "@type": "PostalAddress",
-    addressCountry: "KR",
-    addressRegion: "경기도",
-    addressLocality: "평택시",
-    streetAddress: "고덕국제화계획지구 A-67BL",
+    addressCountry: siteSeo.project.addressCountry,
+    addressRegion: siteSeo.project.addressRegion,
+    addressLocality: siteSeo.project.addressLocality,
+    streetAddress: siteSeo.project.streetAddress,
   },
-  brand: [
-    {
-      "@type": "Brand",
-      name: "수자인",
-    },
-    {
-      "@type": "Brand",
-      name: "hausD",
-    },
-  ],
+  brand: siteSeo.project.brands.map((brandName) => ({
+    "@type": "Brand",
+    name: brandName,
+  })),
 });
 
 const buildWebPageSchema = (page) => ({

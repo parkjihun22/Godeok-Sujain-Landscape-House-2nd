@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { IoIosCheckboxOutline } from "react-icons/io";
-import styles from "./FixIcon.module.scss";
-
-// 관심고객 팝업 컴포넌트 import
+import { siteSeo } from "../../seo/siteSeoData";
 import InterestPopup from "../../components/InterestPopup/InterestPopup";
+import styles from "./FixIcon.module.scss";
 
 const FixIcon = ({ type }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 900px)" });
-
-  // 모바일 버전에서 사용할 관심고객 팝업 상태 및 등록폼 상태
   const [isInterestPopupOpen, setIsInterestPopupOpen] = useState(false);
   const [registration, setRegistration] = useState({
     name: "",
@@ -18,73 +15,52 @@ const FixIcon = ({ type }) => {
     email: "",
     visitDate: "",
   });
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setRegistration((prev) => ({ ...prev, [name]: value }));
   };
 
-  const IconContent = (content) => {
+  const renderDesktopIcon = (content) => {
     if (content === "youtube") {
-      // 유튜브 콘텐츠 렌더링 (필요 시 주석 해제)
-      // return (
-      //   <a
-      //     href="https://youtube.com"
-      //     className={`${styles.absolute} ${styles.youtube}`}
-      //     target="_blank"
-      //     rel="noopener noreferrer"
-      //   >
-      //     <img src={youtube} alt="YouTube 아이콘" />
-      //   </a>
-      // );
-    } else {
-      // 기타 콘텐츠 렌더링 (필요 시 주석 해제)
-      // return (
-      //   <a
-      //     href="https://naver.me/G58kVeiB"
-      //     target="_blank"
-      //     rel="noopener noreferrer"
-      //     className={`${styles.container} ${type === "absolute" ? styles.absolute : styles.fixed}`}
-      //   >
-      //     <div className={styles.circlebox}>관심고객<br />등록</div>
-      //     <img src={movingCircle} alt="circle animation" />
-      //   </a>
-      // );
+      return null;
     }
+
+    return null;
   };
 
   return (
     <>
       {!isMobile ? (
         <>
-          {type === "absolute" && IconContent("youtube")}
-          {IconContent()}
+          {type === "absolute" && renderDesktopIcon("youtube")}
+          {renderDesktopIcon()}
         </>
       ) : (
         <div>
           <div className={styles.buttomBtnContainer}>
-            {/* 방문예약 a 태그를 클릭하면 팝업이 열리도록 처리 */}
+            <a
+              id="phoneConsultation"
+              className={styles.btn2}
+              href={`tel:${siteSeo.phone}`}
+              aria-label="전화상담 연결"
+            >
+              <PiPhoneCallFill size={18} />
+              <div>{siteSeo.phone}</div>
+            </a>
+
             <button
               id="visitReservation"
               className={styles.btn1}
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsInterestPopupOpen(true);
-              }}
+              aria-label="방문예약 팝업 열기"
+              onClick={() => setIsInterestPopupOpen(true)}
             >
-              <IoIosCheckboxOutline size={20} />
+              <IoIosCheckboxOutline size={18} />
               <div>방문예약</div>
             </button>
-            <a
-              id="phoneConsultation"
-              className={styles.btn2}
-              href="tel:1533-8848"
-            >
-              <PiPhoneCallFill size={25} />
-              <div>전화상담</div>
-            </a>
           </div>
-          {/* 관심고객 등록 팝업 렌더링 */}
+
           {isInterestPopupOpen && (
             <InterestPopup
               onClose={() => setIsInterestPopupOpen(false)}
