@@ -88,7 +88,7 @@
   margin-bottom: 1vw;
 
   /* 글자 크기: 작은 섹션 라벨입니다. */
-  font-size: clamp(0.72rem, 0.78vw, 0.92rem);
+  font-size: 0.78vw;
 
   /* 글자 굵기: 어두운 배경에서 선명하게 보이게 합니다. */
   font-weight: 900;
@@ -106,7 +106,7 @@
   margin: 0;
 
   /* 제목 크기: 단지 섹션의 대표 문구로 충분히 보이게 합니다. */
-  font-size: clamp(2.25rem, 3vw, 4.4rem);
+  font-size: 3vw;
 
   /* 제목 굵기: 고급스럽고 선명한 무게감입니다. */
   font-weight: 650;
@@ -124,7 +124,7 @@
   margin: 1.2vw 0 0;
 
   /* 글자 크기: 설명문으로 읽기 좋은 크기입니다. */
-  font-size: clamp(0.95rem, 0.95vw, 1.1rem);
+  font-size: 0.95vw;
 
   /* 줄 높이: 긴 설명의 가독성을 높입니다. */
   line-height: 1.8;
@@ -254,7 +254,7 @@
   color: rgba(255, 255, 255, 0.78);
 
   /* 글자 크기: 탭명 가독성을 확보합니다. */
-  font-size: clamp(0.82rem, 0.78vw, 0.96rem);
+  font-size: 0.78vw;
 
   /* 글자 굵기: 클릭 요소의 선명도를 높입니다. */
   font-weight: 900;
@@ -299,7 +299,7 @@
   margin-bottom: 0.5vw;
 
   /* 라벨 크기입니다. */
-  font-size: clamp(0.7rem, 0.68vw, 0.84rem);
+  font-size: 0.68vw;
 
   /* 라벨 굵기입니다. */
   font-weight: 900;
@@ -317,7 +317,7 @@
   margin: 0;
 
   /* 제목 크기: 상세 항목의 핵심 문구입니다. */
-  font-size: clamp(1.3rem, 1.45vw, 2rem);
+  font-size: 1.45vw;
 
   /* 제목 굵기: 정보 위계를 분명히 합니다. */
   font-weight: 800;
@@ -332,7 +332,7 @@
   margin: 0.75vw 0 0;
 
   /* 글자 크기: 상세 설명에 맞는 크기입니다. */
-  font-size: clamp(0.88rem, 0.85vw, 1rem);
+  font-size: 0.85vw;
 
   /* 줄 높이: 읽기 편한 설명문을 만듭니다. */
   line-height: 1.75;
@@ -379,12 +379,17 @@
 }
 
 /* =========================
+   모바일 스타일
+========================= */
+
+
+/* =========================
    모바일 레이아웃
 ========================= */
 @media (max-width: 900px) {
   .community {
     /* 모바일 여백: 세로 흐름에 맞게 위아래 공간을 확보합니다. */
-    padding: 16vw 0;
+    padding: 8vw 0;
 
     /* 모바일 높이: 콘텐츠 높이에 맞춰 자연스럽게 흐릅니다. */
     min-height: auto;
@@ -397,7 +402,7 @@
 
   .community__head {
     /* 모바일 헤더 아래 여백입니다. */
-    margin-bottom: 8vw;
+    margin-bottom: 5vw;
   }
 
   .community__head span {
@@ -407,15 +412,15 @@
 
   .community__head h2 {
     /* 모바일 제목 크기입니다. */
-    font-size: 7.6vw;
+    font-size: 3vw;
   }
 
   .community__head p {
     /* 모바일 설명 위 여백입니다. */
-    margin-top: 4vw;
+    margin-top: 2vw;
 
     /* 모바일 설명 크기입니다. */
-    font-size: 3.55vw;
+    font-size: 2.5vw;
   }
 
   .community__grid {
@@ -465,24 +470,30 @@
 
   .community__text span {
     /* 모바일 상세 라벨 크기입니다. */
-    font-size: 2.65vw;
+    font-size: 3vw;
   }
 
   .community__text h3 {
     /* 모바일 상세 제목 크기입니다. */
-    font-size: 5vw;
+    font-size: 3vw;
   }
 
   .community__text p {
     /* 모바일 상세 설명 위 여백입니다. */
-    margin-top: 2.6vw;
+    margin-top: 1vw;
 
     /* 모바일 상세 설명 크기입니다. */
-    font-size: 3.35vw;
+    font-size: 2.5vw;
   }
 
   .community__detail img {
-    /* 모바일 상세 이미지 높이입니다. */
-    height: 58vw;
+    /* 모바일 상세 이미지 높이: 원본 비율대로 자동 계산해 이미지가 잘리지 않게 합니다. */
+    height: auto;
+
+    /* 모바일 상세 이미지 맞춤: 단지 배치도/특화설계/커뮤니티 이미지를 자르지 않고 전체 표시합니다. */
+    object-fit: contain;
+
+    /* 모바일 상세 이미지 배경: 여백이 생기는 이미지도 깨끗한 흰색 프레임 안에 보이게 합니다. */
+    background: #fff;
   }
 }

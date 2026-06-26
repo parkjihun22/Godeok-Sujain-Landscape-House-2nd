@@ -25,10 +25,6 @@
   margin: 2vh 10vw;
   border-collapse: collapse;
 
-  @media (max-width: 900px) {
-    margin: 2vh 2vw;
-    font-size: 2.5vw;
-  }
 }
 
 .pressTable th,
@@ -42,9 +38,6 @@
 .pressTable thead tr:first-child th {
   border-top: 1px solid #00140f;
 
-  @media (max-width: 900px) {
-    font-weight: 600;
-  }
 }
 
 .pressTable tbody tr:last-child td {
@@ -173,6 +166,83 @@
   --radius: 1px;
 }
 
+/* 4) 공통 폼 레이블 & 별표 */
+.custForm {
+  .fieldLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .required {
+    color: var(--text);
+    margin-left: 0.25rem;
+  }
+
+  .required::after {
+    content: " *";
+    color: red;
+    margin-left: 0.1rem;
+  }
+}
+
+
+/*뉴스기사 상세보기 화면 css*/
+.pressDatailWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 5vh 25vw;
+
+
+  .pageTitle {
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.5vw;
+
+  }
+
+  .modalMeta {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin: 2vh 0 4vh 0;
+    padding: 0 2% 2vh 0;
+    width: 98%;
+
+    border-bottom: 0.5px solid #cacaca;
+    font-size: 0.8vw;
+
+  }
+
+  .modalBody {
+    font-size: 1vw;
+    border-bottom: 0.5px solid #cacaca;
+
+  }
+
+  .pressDetailCloseBtn {
+    margin: 2vw;
+    padding: 1vh 1.5vw;
+
+    font-size: 1.2vw;
+    line-height: 1.8vw;
+    border-radius: 0.5vw;
+    background-color: #01496f;
+    color: #FFFFFF;
+
+  }
+}
+
+/* =========================
+   PC 보정 스타일
+========================= */
+
+
 /* 2) PC 전용 (>=769px) */
 @media (min-width: 769px) {
   :root {
@@ -291,6 +361,25 @@
   }
 }
 
+/* =========================
+   모바일 스타일
+========================= */
+
+@media (max-width: 900px) {
+  // 표 스타일: 모바일에서 보도자료 표의 바깥 여백과 글자 크기를 조정합니다.
+  .pressTable {
+    margin: 2vh 2vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .pressTable thead tr:first-child th {
+        font-weight: 600;
+  }
+}
+
+
 /* 3) 모바일 전용 (<769px) */
 @media (max-width: 768px) {
   :root {
@@ -398,95 +487,46 @@
   }
 }
 
-/* 4) 공통 폼 레이블 & 별표 */
-.custForm {
-  .fieldLabel {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .required {
-    color: var(--text);
-    margin-left: 0.25rem;
-  }
-
-  .required::after {
-    content: " *";
-    color: red;
-    margin-left: 0.1rem;
+@media (max-width: 900px) {
+  .pressDatailWrap {
+        margin: 2vw 5vw;
   }
 }
 
-
-/*뉴스기사 상세보기 화면 css*/
-.pressDatailWrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  margin: 5vh 25vw;
-
-  @media (max-width: 900px) {
-    margin: 2vw 5vw;
-  }
-
-  .pageTitle {
-    width: 100%;
-    font-weight: 600;
-    font-size: 1.5vw;
-
-    @media (max-width: 900px) {
-      font-size: 3vw;
+@media (max-width: 900px) {
+  .pressDatailWrap {
+    .pageTitle {
+            font-size: 3vw;
     }
   }
+}
 
-  .modalMeta {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-    margin: 2vh 0 4vh 0;
-    padding: 0 2% 2vh 0;
-    width: 98%;
-
-    border-bottom: 0.5px solid #cacaca;
-    font-size: 0.8vw;
-
-    @media (max-width: 900px) {
-      padding: 0 2% 2vw 0;
-      margin: 2vw 0 4vw 0;
-      font-size: 2vw;
+@media (max-width: 900px) {
+  .pressDatailWrap {
+    .modalMeta {
+            padding: 0 2% 2vw 0;
+            margin: 2vw 0 4vw 0;
+            font-size: 2vw;
     }
   }
+}
 
-  .modalBody {
-    font-size: 1vw;
-    border-bottom: 0.5px solid #cacaca;
-
-    @media (max-width: 900px) {
-      font-size: 2.5vw;
-      line-height: 1.6; // 행간 넓이 조정
+@media (max-width: 900px) {
+  .pressDatailWrap {
+    .modalBody {
+            font-size: 2.5vw;
+            line-height: 1.6; // 행간 넓이 조정
     }
   }
+}
 
-  .pressDetailCloseBtn {
-    margin: 2vw;
-    padding: 1vh 1.5vw;
-
-    font-size: 1.2vw;
-    line-height: 1.8vw;
-    border-radius: 0.5vw;
-    background-color: #01496f;
-    color: #FFFFFF;
-
-    @media (max-width: 900px) {
-      margin: 3vw;
-      padding: 2.5vw 3vw;
-      font-size: 3vw;
-      border-radius: 1.5vw;
+@media (max-width: 900px) {
+  .pressDatailWrap {
+    .pressDetailCloseBtn {
+            margin: 3vw;
+            padding: 2.5vw 3vw;
+            font-size: 3vw;
+            border-radius: 1.5vw;
     }
   }
 }

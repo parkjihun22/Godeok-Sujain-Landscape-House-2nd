@@ -23,83 +23,6 @@
   color: #14202a;
 }
 
-/* =========================
-   화면 최적화 보정
-   - PC/모바일 모두 텍스트와 이미지가 브라우저 높이 안에서 잘리지 않도록 조정합니다.
-========================= */
-@media (min-width: 901px) {
-  .location {
-    /* PC 섹션 높이: 콘텐츠가 100vh에 갇혀 하단이 잘리는 문제를 줄입니다. */
-    min-height: auto;
-    padding: clamp(54px, 4.4vw, 82px) 0;
-  }
-
-  .location__inner {
-    /* PC 내부 높이: 고정 헤더 아래에서도 텍스트와 이미지가 한 화면에 자연스럽게 들어오게 합니다. */
-    min-height: auto;
-    gap: clamp(48px, 4.5vw, 86px);
-  }
-
-  .location__content h2 {
-    /* PC 제목 크기: 화면 폭이 넓어도 제목이 과도하게 커지지 않게 제한합니다. */
-    font-size: clamp(2.2rem, 2.65vw, 3.8rem);
-  }
-
-  .location__content p {
-    /* PC 본문 간격: 카드와 CTA가 아래로 밀리지 않도록 여백을 압축합니다. */
-    margin: clamp(18px, 1.15vw, 28px) 0 clamp(22px, 1.7vw, 34px);
-  }
-
-  .location__visual img {
-    /* PC 이미지 높이: 위치 이미지가 섹션 밖으로 과하게 커지지 않도록 제한합니다. */
-    height: clamp(360px, 27vw, 500px);
-  }
-}
-
-@media (max-width: 768px) {
-  .location {
-    /* 모바일 섹션 여백: 상단 고정 헤더 아래에서 제목이 가려지지 않도록 시작 여백을 정리합니다. */
-    padding: 12vw 0 14vw;
-  }
-
-  .location__inner {
-    /* 모바일 내부 폭: 좌우 여백을 유지하면서 가로 스크롤을 방지합니다. */
-    width: min(92vw, 560px);
-  }
-
-  .location__eyebrow {
-    /* 모바일 영문 라벨 크기: 제목보다 튀지 않도록 제한합니다. */
-    font-size: clamp(0.78rem, 3vw, 0.95rem);
-  }
-
-  .location__content h2 {
-    /* 모바일 제목 크기: 긴 문장이 화면 안에서 자연스럽게 줄바꿈되도록 낮춥니다. */
-    font-size: clamp(2rem, 7.1vw, 2.65rem);
-    line-height: 1.16;
-  }
-
-  .location__content p {
-    /* 모바일 본문 크기: 설명문이 과하게 커져 아래 콘텐츠가 밀리는 현상을 줄입니다. */
-    margin: 5vw 0 6vw;
-    font-size: clamp(0.98rem, 3.45vw, 1.12rem);
-  }
-
-  .location__point {
-    /* 모바일 포인트 카드 높이: 카드가 너무 커져 한 화면을 잡아먹지 않도록 합니다. */
-    min-height: auto;
-    padding: clamp(18px, 4vw, 24px);
-  }
-
-  .location__point strong {
-    /* 모바일 포인트 번호 크기: 카드 내 정보 위계를 유지합니다. */
-    font-size: clamp(0.9rem, 3vw, 1rem);
-  }
-
-  .location__point span {
-    /* 모바일 포인트 문구 크기: 줄바꿈이 생겨도 카드가 과하게 높아지지 않게 합니다. */
-    font-size: clamp(1.05rem, 3.65vw, 1.22rem);
-  }
-}
 
 /* =========================
    배경 장식 레이어
@@ -138,7 +61,7 @@
   bottom: 3.2vw;
 
   /* 글자 크기: 값을 키우면 배경 텍스트 존재감이 강해집니다. */
-  font-size: clamp(4.5rem, 8.2vw, 10rem);
+  font-size: 8.2vw;
 
   /* 글자 굵기: 얇고 크게 보여 배경처럼 처리합니다. */
   font-weight: 300;
@@ -216,7 +139,7 @@
   margin-bottom: 1vw;
 
   /* 글자 크기: 섹션 라벨의 정보 위계를 낮게 둡니다. */
-  font-size: clamp(0.72rem, 0.82vw, 0.95rem);
+  font-size: 0.82vw;
 
   /* 글자 굵기: 작은 영문 라벨을 선명하게 합니다. */
   font-weight: 800;
@@ -234,7 +157,7 @@
   margin: 0;
 
   /* 제목 크기: PC에서 섹션의 대표 문구로 보이게 합니다. */
-  font-size: clamp(2.35rem, 3vw, 4.5rem);
+  font-size: 3vw;
 
   /* 제목 굵기: 고급스러운 무게감을 위해 과도하게 두껍지 않게 합니다. */
   font-weight: 650;
@@ -264,7 +187,7 @@
   width: min(42vw, 720px);
 
   /* 글자 크기: 본문 설명으로 읽기 좋은 크기입니다. */
-  font-size: clamp(0.95rem, 0.96vw, 1.12rem);
+  font-size: 0.96vw;
 
   /* 줄 높이: 긴 문장도 편하게 읽히도록 합니다. */
   line-height: 1.86;
@@ -341,7 +264,7 @@
 /* 포인트 번호 */
 .location__point strong {
   /* 번호 크기: 작은 카드의 상단 라벨 역할을 합니다. */
-  font-size: clamp(0.72rem, 0.78vw, 0.94rem);
+  font-size: 0.78vw;
 
   /* 번호 굵기: 작은 숫자가 흐려지지 않게 합니다. */
   font-weight: 900;
@@ -353,7 +276,7 @@
 /* 포인트 텍스트 */
 .location__point span {
   /* 텍스트 크기: 카드 안에서 핵심 문구가 또렷하게 보이도록 합니다. */
-  font-size: clamp(0.92rem, 0.96vw, 1.08rem);
+  font-size: 0.96vw;
 
   /* 텍스트 굵기: 핵심 포인트의 중요도를 높입니다. */
   font-weight: 800;
@@ -388,7 +311,7 @@
   border-radius: 999px;
 
   /* 글자 크기: CTA 문구가 명확히 읽히도록 합니다. */
-  font-size: clamp(0.92rem, 0.94vw, 1.08rem);
+  font-size: 0.94vw;
 
   /* 글자 굵기: 버튼의 행동성을 강조합니다. */
   font-weight: 900;
@@ -501,7 +424,7 @@
   margin-bottom: 0.52vw;
 
   /* 글자 크기: 작은 영문 라벨의 크기입니다. */
-  font-size: clamp(0.62rem, 0.62vw, 0.78rem);
+  font-size: 0.62vw;
 
   /* 자간: 영문 라벨의 정돈된 느낌을 만듭니다. */
   letter-spacing: 0.18em;
@@ -519,7 +442,7 @@
   display: block;
 
   /* 글자 크기: 배지 안의 핵심 문구 크기입니다. */
-  font-size: clamp(1rem, 1.14vw, 1.45rem);
+  font-size: 1.14vw;
 
   /* 줄 높이: 두 줄로 접혀도 안정적으로 보이게 합니다. */
   line-height: 1.35;
@@ -527,6 +450,123 @@
   /* 글자 굵기: 배지의 중심 문구를 강조합니다. */
   font-weight: 900;
 }
+
+/* =========================
+   PC 보정 스타일
+========================= */
+
+
+/* =========================
+   화면 최적화 보정
+   - PC/모바일 모두 텍스트와 이미지가 브라우저 높이 안에서 잘리지 않도록 조정합니다.
+========================= */
+@media (min-width: 901px) {
+  .location {
+    /* PC 섹션 높이: 콘텐츠가 100vh에 갇혀 하단이 잘리는 문제를 줄입니다. */
+    min-height: auto;
+    padding: 4.4vw 0;
+  }
+
+  .location__inner {
+    /* PC 내부 높이: 고정 헤더 아래에서도 텍스트와 이미지가 한 화면에 자연스럽게 들어오게 합니다. */
+    min-height: auto;
+    gap: 4.5vw;
+  }
+
+  .location__content h2 {
+    /* PC 제목 크기: 화면 폭이 넓어도 제목이 과도하게 커지지 않게 제한합니다. */
+    font-size: 2.65vw;
+  }
+
+  .location__content p {
+    /* PC 본문 간격: 카드와 CTA가 아래로 밀리지 않도록 여백을 압축합니다. */
+    margin: 1.15vw 0 1.7vw;
+  }
+
+  .location__visual img {
+    /* PC 이미지 높이: 위치 이미지가 섹션 밖으로 과하게 커지지 않도록 제한합니다. */
+    height: 27vw;
+  }
+}
+
+
+/* =========================
+   최종 화면 최적화 보정
+   - 파일 하단에서 다시 한 번 적용해 기존 모바일/PC 규칙보다 우선되게 합니다.
+========================= */
+@media (min-width: 901px) {
+  .location {
+    /* PC 최종 섹션 여백: 섹션 내용이 하단에서 잘리지 않도록 세로 여백을 안정화합니다. */
+    min-height: auto;
+    padding: 4.4vw 0;
+  }
+
+  .location__inner {
+    /* PC 최종 내부 높이: 고정 높이 대신 콘텐츠 기준으로 자연스럽게 배치합니다. */
+    min-height: auto;
+    gap: 4.5vw;
+  }
+
+  .location__content h2 {
+    /* PC 최종 제목 크기: 너무 큰 제목으로 인한 잘림을 줄입니다. */
+    font-size: 2.65vw;
+  }
+
+  .location__visual img {
+    /* PC 최종 이미지 높이: 이미지가 섹션 높이를 과하게 밀어내지 않게 합니다. */
+    height: 27vw;
+  }
+}
+
+/* =========================
+   모바일 스타일
+========================= */
+
+@media (max-width: 768px) {
+  .location {
+    /* 모바일 섹션 여백: 상단 고정 헤더 아래에서 제목이 가려지지 않도록 시작 여백을 정리합니다. */
+    padding: 12vw 0 14vw;
+  }
+
+  .location__inner {
+    /* 모바일 내부 폭: 좌우 여백을 유지하면서 가로 스크롤을 방지합니다. */
+    width: min(92vw, 560px);
+  }
+
+  .location__eyebrow {
+    /* 모바일 영문 라벨 크기: 제목보다 튀지 않도록 제한합니다. */
+    font-size: 3vw;
+  }
+
+  .location__content h2 {
+    /* 모바일 제목 크기: 긴 문장이 화면 안에서 자연스럽게 줄바꿈되도록 낮춥니다. */
+    font-size: 7.1vw;
+    line-height: 1.16;
+  }
+
+  .location__content p {
+    /* 모바일 본문 크기: 설명문이 과하게 커져 아래 콘텐츠가 밀리는 현상을 줄입니다. */
+    margin: 5vw 0 6vw;
+    font-size: 3.45vw;
+  }
+
+  .location__point {
+    /* 모바일 포인트 카드 높이: 카드가 너무 커져 한 화면을 잡아먹지 않도록 합니다. */
+    min-height: auto;
+    padding: 4vw;
+  }
+
+  .location__point strong {
+    /* 모바일 포인트 번호 크기: 카드 내 정보 위계를 유지합니다. */
+    font-size: 3vw;
+  }
+
+  .location__point span {
+    /* 모바일 포인트 문구 크기: 줄바꿈이 생겨도 카드가 과하게 높아지지 않게 합니다. */
+    font-size: 3.65vw;
+  }
+}
+
 
 /* =========================
    태블릿 이하 레이아웃
@@ -609,6 +649,7 @@
   }
 }
 
+
 /* =========================
    모바일 레이아웃
    - 모바일은 PC 축소가 아니라 카드형 정보 흐름으로 다시 디자인합니다.
@@ -677,16 +718,16 @@
 
   .location__button {
     /* 모바일 버튼 위 여백: 포인트 리스트와 CTA를 분리합니다. */
-    margin-top: 6vw;
+    margin-top: 4vw;
 
     /* 모바일 버튼 너비: 터치하기 쉽게 전체 폭을 사용합니다. */
     width: 100%;
 
     /* 모바일 버튼 여백: 버튼 높이를 충분히 확보합니다. */
-    padding: 4vw 5vw;
+    padding: 2vw 3vw;
 
     /* 모바일 버튼 글자 크기: CTA 문구가 선명하게 보입니다. */
-    font-size: 3.8vw;
+    font-size: 3vw;
   }
 
   .location__visual img {
@@ -697,13 +738,13 @@
   .location__badge {
     /* 모바일 배지 위치: 이미지 아래쪽에 걸쳐 배치합니다. */
     right: 5vw;
-    bottom: -7vw;
+    bottom: -5vw;
 
     /* 모바일 배지 폭: 한 줄 문구가 안정적으로 들어갑니다. */
-    width: 62vw;
+    width: 50vw;
 
     /* 모바일 배지 안쪽 여백: 텍스트 가독성을 확보합니다. */
-    padding: 4.5vw;
+    padding: 3vw;
   }
 
   .location__badge span {
@@ -720,38 +761,10 @@
   }
 }
 
-/* =========================
-   최종 화면 최적화 보정
-   - 파일 하단에서 다시 한 번 적용해 기존 모바일/PC 규칙보다 우선되게 합니다.
-========================= */
-@media (min-width: 901px) {
-  .location {
-    /* PC 최종 섹션 여백: 섹션 내용이 하단에서 잘리지 않도록 세로 여백을 안정화합니다. */
-    min-height: auto;
-    padding: clamp(54px, 4.4vw, 82px) 0;
-  }
-
-  .location__inner {
-    /* PC 최종 내부 높이: 고정 높이 대신 콘텐츠 기준으로 자연스럽게 배치합니다. */
-    min-height: auto;
-    gap: clamp(48px, 4.5vw, 86px);
-  }
-
-  .location__content h2 {
-    /* PC 최종 제목 크기: 너무 큰 제목으로 인한 잘림을 줄입니다. */
-    font-size: clamp(2.2rem, 2.65vw, 3.8rem);
-  }
-
-  .location__visual img {
-    /* PC 최종 이미지 높이: 이미지가 섹션 높이를 과하게 밀어내지 않게 합니다. */
-    height: clamp(360px, 27vw, 500px);
-  }
-}
-
 @media (max-width: 768px) {
   .location {
     /* 모바일 최종 섹션 여백: 상단 헤더와 하단 고정 버튼 사이에서 균형을 맞춥니다. */
-    padding: 12vw 0 14vw;
+    padding: 8vw 0 14vw;
   }
 
   .location__inner {
@@ -760,24 +773,24 @@
   }
 
   .location__content h2 {
-    /* 모바일 최종 제목 크기: 긴 제목이 화면을 과하게 차지하지 않게 합니다. */
-    font-size: clamp(2rem, 7.1vw, 2.65rem);
-    line-height: 1.16;
+    /* 모바일 최종 제목 크기: 긴 제목이 화면을 과하게 차지하지 않도록 줄입니다. */
+    font-size: 4vw;
+    line-height: 1.3;
   }
 
   .location__content p {
-    /* 모바일 최종 본문 크기: 본문이 커져 카드가 밀리는 문제를 줄입니다. */
-    font-size: clamp(0.98rem, 3.45vw, 1.12rem);
+    /* 모바일 최종 본문 크기: 본문이 크게 보여 답답한 느낌을 줄입니다. */
+    font-size: 2.5vw;
   }
 
   .location__point {
     /* 모바일 최종 포인트 카드: 카드 높이를 내용 기준으로 줄입니다. */
     min-height: auto;
-    padding: clamp(18px, 4vw, 24px);
+    padding: 2vw;
   }
 
   .location__point span {
     /* 모바일 최종 포인트 문구: 줄바꿈과 가독성의 균형을 맞춥니다. */
-    font-size: clamp(1.05rem, 3.65vw, 1.22rem);
+    font-size: 2.5vw;
   }
 }

@@ -48,12 +48,6 @@ const Community = () => {
 
         <div className="community__grid">
           <div className="community__banner">
-            <img
-              src={communityData.banner.image}
-              alt={communityData.banner.alt}
-              loading="lazy"
-              decoding="async"
-            />
           </div>
 
           <div className="community__panel">

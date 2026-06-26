@@ -10,7 +10,7 @@ export const quickInfoData = {
       value: 403,
       suffix: "세대",
       label: "TOTAL HOUSEHOLDS",
-      description: "고덕국제화계획지구 A-67BL에 공급되는 브랜드 주거 단지",
+      description: "고덕국제화계획지구 A-67BL에 공급되는 주거 단지",
       duration: 2600,
     },
     {
@@ -19,7 +19,7 @@ export const quickInfoData = {
       suffix: "㎡",
       label: "MAIN TYPE",
       description: "실거주 선호도가 높은 전용 84㎡ 중심 구성",
-      duration: 2300,
+      duration: 2500,
     },
     {
       id: "large-type",
@@ -27,15 +27,15 @@ export const quickInfoData = {
       suffix: "㎡",
       label: "LARGE TYPE",
       description: "여유로운 공간감을 갖춘 중대형 특화 평면",
-      duration: 2400,
+      duration: 2500,
     },
     {
       id: "max-floor",
-      value: 23,
+      value: 25,
       suffix: "F",
       label: "MAX FLOOR",
       description: "지상 최고 23층으로 계획된 스카이라인",
-      duration: 2200,
+      duration: 2500,
     },
     {
       id: "buildings",
@@ -43,7 +43,7 @@ export const quickInfoData = {
       suffix: "개동",
       label: "BUILDINGS",
       description: "쾌적한 배치와 생활 동선을 고려한 단지 설계",
-      duration: 2200,
+      duration: 2500,
     },
   ],
 };

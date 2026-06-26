@@ -11,7 +11,7 @@ const FAQSection = ({
   const items = Array.isArray(data) ? data : data.items;
   const keywords = Array.isArray(data) ? faqData.keywords : data.keywords;
   const eyebrow = Array.isArray(data) ? faqData.eyebrow : data.eyebrow;
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -27,7 +27,21 @@ const FAQSection = ({
   };
 
   const toggleFAQ = (index) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
+    setOpenIndex((prev) => {
+      const nextIndex = prev === index ? null : index;
+
+      if (nextIndex !== null) {
+        window.requestAnimationFrame(() => {
+          const item = document.querySelector(`[data-faq-item="${nextIndex}"]`);
+          item?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        });
+      }
+
+      return nextIndex;
+    });
   };
 
   return (
@@ -36,7 +50,11 @@ const FAQSection = ({
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <section className={styles.faqSection} aria-labelledby="faqTitle">
+      <section
+        className={styles.faqSection}
+        aria-labelledby="faqTitle"
+        data-native-scroll-section="true"
+      >
         <div className={styles.faqInner}>
           <div className={styles.faqTitleBox}>
             <span className={styles.eyebrow}>{eyebrow}</span>
@@ -60,6 +78,7 @@ const FAQSection = ({
                 <article
                   key={item.id || item.question}
                   className={`${styles.faqItem} ${isOpen ? styles.active : ""}`}
+                  data-faq-item={index}
                 >
                   <span className={styles.category}>{item.category}</span>
 

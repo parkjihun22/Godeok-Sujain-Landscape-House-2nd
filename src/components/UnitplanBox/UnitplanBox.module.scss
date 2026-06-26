@@ -32,7 +32,7 @@
   margin-bottom: 0.55vw;
 
   /* 글자 크기: 작은 보조 라벨로 보이게 합니다. */
-  font-size: clamp(0.7rem, 0.66vw, 0.82rem);
+  font-size: 1vXw;
 
   /* 글자 굵기: 작은 글자의 선명도를 확보합니다. */
   font-weight: 900;
@@ -44,13 +44,14 @@
   color: #b8893f;
 }
 
+
 /* 제목 */
 .header h2 {
   /* 기본 여백 제거: 주변 간격을 명확히 관리합니다. */
   margin: 0;
 
   /* 제목 크기: 부모 섹션 안에서 과하게 크지 않게 조절합니다. */
-  font-size: clamp(1.35rem, 1.45vw, 2rem);
+  font-size: 1.45vw;
 
   /* 제목 굵기: 섹션 내 소제목으로 선명하게 보이게 합니다. */
   font-weight: 800;
@@ -71,7 +72,7 @@
   max-width: 40vw;
 
   /* 글자 크기: 보조 설명으로 읽기 좋은 크기입니다. */
-  font-size: clamp(0.82rem, 0.78vw, 0.96rem);
+  font-size: 0.78vw;
 
   /* 줄 높이: 긴 설명의 가독성을 높입니다. */
   line-height: 1.7;
@@ -120,7 +121,7 @@
   border-radius: 8px;
 
   /* 버튼 글자 크기: 타입명이 명확히 보이는 크기입니다. */
-  font-size: clamp(0.82rem, 0.78vw, 0.98rem);
+  font-size: 0.78vw;
 
   /* 버튼 글자 굵기: 클릭 가능한 요소임을 분명히 합니다. */
   font-weight: 900;
@@ -314,7 +315,7 @@
   display: block;
 
   /* 글자 크기: 작은 타입 라벨입니다. */
-  font-size: clamp(0.72rem, 0.68vw, 0.84rem);
+  font-size: 0.68vw;
 
   /* 글자 굵기: 타입을 선명하게 보여줍니다. */
   font-weight: 900;
@@ -332,7 +333,7 @@
   margin: 0.35vw 0 0.25vw;
 
   /* 제목 크기: 선택된 평면명이 잘 보이도록 합니다. */
-  font-size: clamp(1.05rem, 1vw, 1.3rem);
+  font-size: 1vw;
 
   /* 제목 굵기: 정보 제목의 위계를 세웁니다. */
   font-weight: 900;
@@ -347,7 +348,7 @@
   margin: 0;
 
   /* 설명 크기: 짧은 보조 문구에 맞는 크기입니다. */
-  font-size: clamp(0.82rem, 0.78vw, 0.95rem);
+  font-size: 0.78vw;
 
   /* 줄 높이: 설명 가독성을 확보합니다. */
   line-height: 1.55;
@@ -373,6 +374,119 @@
 }
 
 /* =========================
+   PC 보정 스타일
+========================= */
+
+
+/* =========================
+   PC final layout correction
+   - Keeps the premium left message panel and large right unit-plan viewer on desktop.
+========================= */
+@media (min-width: 901px) {
+  .unitPlan {
+    /* PC 전체 폭: 다른 메인 섹션과 같은 스케일로 보이도록 유니트 박스 자체를 넓게 사용합니다. */
+    width: 100%;
+
+    /* PC 최대 폭: 초대형 모니터에서 내용이 과하게 벌어지지 않도록 상한선을 둡니다. */
+    max-width: 1640px;
+
+    display: grid;
+    grid-template-columns: minmax(300px, 0.32fr) minmax(0, 0.68fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 2.6vw;
+    row-gap: 0.9vw;
+
+    /* PC 안쪽 여백: 좌측 브랜드 패널과 우측 평면도가 붙어 보이지 않도록 공간을 확보합니다. */
+    padding: 2vw;
+
+    /* PC 배경: 섹션 배경과 자연스럽게 이어지면서도 프리미엄 박스처럼 보이게 합니다. */
+    background: linear-gradient(135deg, rgba(1, 73, 111, 0.08), transparent 36%), rgba(255, 255, 255, 0.64);
+    border: 1px solid rgba(1, 73, 111, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 26px 60px rgba(20, 32, 42, 0.08);
+  }
+
+  .header {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    min-height: 100%;
+
+    /* PC 좌측 패널 여백: 문구가 고급스럽게 숨 쉴 수 있도록 넉넉하게 둡니다. */
+    padding: 2.7vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(145deg, rgba(1, 73, 111, 0.96), rgba(6, 16, 25, 0.96)), #01496f;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .header span {
+    color: #d4af37;
+  }
+
+  .header h2 {
+    font-size: 1.5vw;
+    color: #fff;
+  }
+
+  .header p {
+    max-width: none;
+    margin-top: 1.4vw;
+    color: rgba(255, 255, 255, 0.74);
+  }
+
+  .tabList {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+
+    /* PC 탭 간격: 평면 타입 버튼이 이미지 상단의 조작 영역처럼 보이게 정돈합니다. */
+    margin-bottom: 0;
+  }
+
+  .viewer {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .imageArea {
+    /* PC 평면도 비율: 이미지 영역을 더 넓고 낮게 잡아 한 화면 안에서 답답함을 줄입니다. */
+    aspect-ratio: 16 / 8.25;
+
+    /* PC 평면도 안쪽 여백: 이미지가 프레임 안에서 커 보이도록 여백을 줄입니다. */
+    padding: 0.65vw;
+  }
+
+  .info {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+
+    /* PC 선택 정보 위치: 평면도 위에서 현재 선택 타입을 바로 확인하게 합니다. */
+    align-self: stretch;
+
+    /* PC 선택 정보 여백: 얇은 바 형태로 정리해 이미지보다 시선이 튀지 않게 합니다. */
+    padding: 0.9vw 1.2vw;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(1, 73, 111, 0.1);
+    border-radius: 8px;
+  }
+
+  .info h3,
+  .info p {
+    /* PC 선택 정보 줄 간격: 작은 정보 바 안에서 텍스트가 과하게 커지지 않도록 조정합니다. */
+    margin-top: 0.12vw;
+  }
+}
+
+/* =========================
+   모바일 스타일
+========================= */
+
+
+/* =========================
    모바일 레이아웃
    - PC를 단순 축소하지 않고 탭과 이미지 확인 흐름을 세로형으로 조정합니다.
 ========================= */
@@ -384,7 +498,7 @@
 
   .header span {
     /* 모바일 라벨 크기: 작은 화면에서 읽기 좋게 합니다. */
-    font-size: 2.7vw;
+    font-size: 3vw;
   }
 
   .header h2 {
@@ -479,108 +593,6 @@
   }
 }
 
-/* =========================
-   PC final layout correction
-   - Keeps the premium left message panel and large right unit-plan viewer on desktop.
-========================= */
-@media (min-width: 901px) {
-  .unitPlan {
-    /* PC 전체 폭: 다른 메인 섹션과 같은 스케일로 보이도록 유니트 박스 자체를 넓게 사용합니다. */
-    width: 100%;
-
-    /* PC 최대 폭: 초대형 모니터에서 내용이 과하게 벌어지지 않도록 상한선을 둡니다. */
-    max-width: 1640px;
-
-    display: grid;
-    grid-template-columns: minmax(300px, 0.32fr) minmax(0, 0.68fr);
-    grid-template-rows: auto auto 1fr;
-    column-gap: clamp(28px, 2.6vw, 48px);
-    row-gap: clamp(12px, 0.9vw, 18px);
-
-    /* PC 안쪽 여백: 좌측 브랜드 패널과 우측 평면도가 붙어 보이지 않도록 공간을 확보합니다. */
-    padding: clamp(24px, 2vw, 38px);
-
-    /* PC 배경: 섹션 배경과 자연스럽게 이어지면서도 프리미엄 박스처럼 보이게 합니다. */
-    background: linear-gradient(135deg, rgba(1, 73, 111, 0.08), transparent 36%), rgba(255, 255, 255, 0.64);
-    border: 1px solid rgba(1, 73, 111, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 26px 60px rgba(20, 32, 42, 0.08);
-  }
-
-  .header {
-    grid-column: 1;
-    grid-row: 1 / 4;
-    min-height: 100%;
-
-    /* PC 좌측 패널 여백: 문구가 고급스럽게 숨 쉴 수 있도록 넉넉하게 둡니다. */
-    padding: clamp(34px, 2.7vw, 56px);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(145deg, rgba(1, 73, 111, 0.96), rgba(6, 16, 25, 0.96)), #01496f;
-    border-radius: 8px;
-    color: #fff;
-  }
-
-  .header span {
-    color: #d4af37;
-  }
-
-  .header h2 {
-    font-size: clamp(2rem, 2.35vw, 3.2rem);
-    color: #fff;
-  }
-
-  .header p {
-    max-width: none;
-    margin-top: 1.4vw;
-    color: rgba(255, 255, 255, 0.74);
-  }
-
-  .tabList {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: end;
-
-    /* PC 탭 간격: 평면 타입 버튼이 이미지 상단의 조작 영역처럼 보이게 정돈합니다. */
-    margin-bottom: 0;
-  }
-
-  .viewer {
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  .imageArea {
-    /* PC 평면도 비율: 이미지 영역을 더 넓고 낮게 잡아 한 화면 안에서 답답함을 줄입니다. */
-    aspect-ratio: 16 / 8.25;
-
-    /* PC 평면도 안쪽 여백: 이미지가 프레임 안에서 커 보이도록 여백을 줄입니다. */
-    padding: clamp(8px, 0.65vw, 14px);
-  }
-
-  .info {
-    grid-column: 2;
-    grid-row: 2;
-    margin-top: 0;
-
-    /* PC 선택 정보 위치: 평면도 위에서 현재 선택 타입을 바로 확인하게 합니다. */
-    align-self: stretch;
-
-    /* PC 선택 정보 여백: 얇은 바 형태로 정리해 이미지보다 시선이 튀지 않게 합니다. */
-    padding: clamp(13px, 0.9vw, 18px) clamp(18px, 1.2vw, 24px);
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(1, 73, 111, 0.1);
-    border-radius: 8px;
-  }
-
-  .info h3,
-  .info p {
-    /* PC 선택 정보 줄 간격: 작은 정보 바 안에서 텍스트가 과하게 커지지 않도록 조정합니다. */
-    margin-top: 0.12vw;
-  }
-}
 
 /* =========================
    모바일 유니트 화면 최적화
@@ -594,12 +606,12 @@
 
   .header h2 {
     /* 모바일 유니트 제목 크기: 긴 제목이 과하게 커져 잘리지 않도록 제한합니다. */
-    font-size: clamp(1.7rem, 6.5vw, 2.35rem);
+    font-size: 2.5w;
   }
 
   .header p {
     /* 모바일 유니트 설명 크기: 탭과 이미지가 아래로 과하게 밀리지 않게 합니다. */
-    font-size: clamp(0.92rem, 3.3vw, 1.05rem);
+    font-size: 2.5vw;
   }
 
   .tab,
@@ -607,8 +619,8 @@
     /* 모바일 탭 크기: 3~4개 타입 버튼이 한 줄 또는 자연스러운 두 줄로 정렬되게 합니다. */
     min-height: 44px;
     min-width: 74px;
-    padding: 10px 14px;
-    font-size: clamp(0.95rem, 3.3vw, 1.08rem);
+    padding: 10px 20px;
+    font-size: 2.5vw;
   }
 
   .viewer {

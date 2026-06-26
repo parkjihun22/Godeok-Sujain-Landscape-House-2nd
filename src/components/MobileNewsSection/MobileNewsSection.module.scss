@@ -41,9 +41,6 @@ $shadow: rgba(0, 0, 0, 0.05);
     // 최소 2열, 최대 4열 자동 조정
     grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
 
-    @media (min-width: 800px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 
   .card {
@@ -148,6 +145,18 @@ $shadow: rgba(0, 0, 0, 0.05);
         background: #07393b;
         transform: translateY(-0.5vw);
       }
+    }
+  }
+}
+
+/* =========================
+   PC 보정 스타일
+========================= */
+
+@media (min-width: 800px) {
+  // ─── 레이아웃 ─── .newsSection {
+    .newsGrid {
+            grid-template-columns: repeat(4, 1fr);
     }
   }
 }

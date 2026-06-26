@@ -14,7 +14,7 @@ export default function UnitPlanSection() {
     <section className={styles.wrapper}>
       {/* ─── 헤더 ─── */}
       <div className={styles.header}>
-        <div className={styles.preTitle}>HILLSTATE UNITPLAN</div>
+        <div className={styles.preTitle}>UNITPLAN</div>
         <div className={styles.line} />
         <h2 className={styles.title}>
           {openKey === "types"

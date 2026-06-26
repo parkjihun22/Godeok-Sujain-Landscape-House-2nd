@@ -1,4 +1,4 @@
-import locationImage from "../../assets/Main/section1-img1.jpg";
+import locationImage from "../../assets/LocationEnvironment/LocationEnvironment1/page1.jpg";
 
 export const locationData = {
   eyebrow: "LOCATION",

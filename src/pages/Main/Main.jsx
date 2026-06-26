@@ -111,14 +111,17 @@ const Main = () => {
     if (isMobile) return;
 
     const handleWheel = (e) => {
-      e.preventDefault();
+      const nativeScrollSection = e.target.closest?.("[data-native-scroll-section='true']");
 
       const activeTag = document.activeElement?.tagName;
       const isFormFocus = ["INPUT", "TEXTAREA", "SELECT", "BUTTON"].includes(
         activeTag || ""
       );
 
-      if (isFormFocus || isInterestPopupOpen) return;
+      if (nativeScrollSection || isFormFocus || isInterestPopupOpen) return;
+
+      e.preventDefault();
+
       if (isScrolling) return;
 
       setIsScrolling(true);
@@ -229,8 +232,8 @@ const Main = () => {
             <div className={styles.section4}>
               <div className={styles.textBox}>
                 <UnitplanBox />
-                <Link to="/FloorPlan/84A" className={styles.text2}>
-                  평면도 더 알아보기 {">"}
+                <Link to="/FloorPlan/59A" className={styles.text2}>
+                  더 알아보기 {">"}
                 </Link>
               </div>
             </div>
@@ -305,16 +308,15 @@ const Main = () => {
             </button>
           </div>
           </div>
-          <Location onReserve={() => setIsInterestPopupOpen(true)} />
           <MobileOverviewSection />
+          <Location onReserve={() => setIsInterestPopupOpen(true)} />
 
           <section className={styles.darkSection}>
             <Community />
           </section>
 
-          <UnitInfoSection />
-
           <Premium />
+          <UnitInfoSection />
           <FAQSection />
 
           <ReservationSection

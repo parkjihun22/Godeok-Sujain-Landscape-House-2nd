@@ -30,14 +30,14 @@
   margin: 0 auto;
 
   /* 안쪽 여백: Footer가 답답하지 않게 위아래 공간을 확보합니다. */
-  padding: clamp(20px, 1.8vw, 34px) 0 clamp(14px, 1.3vw, 24px);
+  padding: 1.8vw 0 1.3vw;
 
   /* PC 배치: 좌측 브랜드 정보와 우측 연락/버튼 영역으로 나눕니다. */
   display: grid;
   grid-template-columns: minmax(0, 0.58fr) minmax(340px, 0.42fr);
 
   /* 열 간격: 정보와 행동 버튼을 분리합니다. */
-  gap: clamp(20px, 2.2vw, 42px);
+  gap: 2.2vw;
 
   /* 상단 정렬: 긴 안내 문구와 우측 정보의 시작점을 맞춥니다. */
   align-items: start;
@@ -59,7 +59,7 @@
   margin-bottom: 6px;
 
   /* 라벨 크기: 작고 단단하게 보이게 합니다. */
-  font-size: clamp(0.62rem, 0.56vw, 0.72rem);
+  font-size: 0.56vw;
 
   /* 라벨 두께: 어두운 배경에서 흐려지지 않게 합니다. */
   font-weight: 900;
@@ -73,10 +73,10 @@
 
 .brandArea h2 {
   /* 제목 여백 제거: 주변 간격을 명확히 관리합니다. */
-  margin: 0 0 clamp(8px, 0.7vw, 14px);
+  margin: 0 0 0.7vw;
 
   /* 제목 크기: Footer에서도 브랜드명이 분명히 보이게 합니다. */
-  font-size: clamp(1.25rem, 1.42vw, 1.9rem);
+  font-size: 1.42vw;
 
   /* 제목 두께: 하단 브랜드 인상을 강화합니다. */
   font-weight: 900;
@@ -93,7 +93,7 @@
   margin: 0 0 5px;
 
   /* 문단 크기: 법적/안내성 문구로 차분하게 처리합니다. */
-  font-size: clamp(0.72rem, 0.66vw, 0.84rem);
+  font-size: 0.66vw;
 
   /* 문단 줄 높이: 긴 안내 문구를 편하게 읽도록 합니다. */
   line-height: 1.42;
@@ -132,7 +132,7 @@
   text-decoration: none;
 
   /* 전화번호 크기: 상담 CTA로 충분히 눈에 띄게 합니다. */
-  font-size: clamp(1rem, 1.05vw, 1.32rem);
+  font-size: 1.05vw;
 
   /* 전화번호 두께: 연락 정보의 우선순위를 높입니다. */
   font-weight: 900;
@@ -394,6 +394,11 @@
 }
 
 /* =========================
+   모바일 스타일
+========================= */
+
+
+/* =========================
    모바일 Footer
 ========================= */
 @media (max-width: 900px) {
@@ -401,47 +406,90 @@
     /* 모바일 내부 폭: 좌우 여백을 확보합니다. */
     width: min(92vw, 560px);
 
-    /* 모바일 여백: 하단 고정 버튼과 겹치지 않도록 아래 여백을 둡니다. */
-    padding: 6vw 0 4vw;
+    /* 모바일 여백: Footer 높이가 과하게 길어지지 않도록 위아래 공간을 줄입니다. */
+    padding: 4.5vw 0 3vw;
 
     /* 모바일 배치: 모든 정보를 세로로 쌓습니다. */
     display: flex;
     flex-direction: column;
 
-    /* 모바일 간격: 그룹별 구분을 만듭니다. */
-    gap: 3.6vw;
+    /* 모바일 간격: 정보 그룹 사이의 빈 공간을 압축합니다. */
+    gap: 2.6vw;
+  }
+
+  .eyebrow {
+    /* 모바일 상단 라벨 크기: 아주 작은 브랜드 라벨이 과하게 튀지 않게 합니다. */
+    font-size: 1.45vw;
   }
 
   .brandArea h2 {
-    /* 모바일 브랜드명 크기: 한두 줄 안에서 안정적으로 보이게 합니다. */
-    font-size: clamp(1.25rem, 4.8vw, 1.7rem);
+    /* 모바일 브랜드명 크기: Footer 제목이 본문보다 살짝 크되 부담스럽지 않게 합니다. */
+    font-size: 4vw;
   }
 
   .brandArea p {
-    /* 모바일 안내문 크기: 작은 화면에서도 읽기 쉽게 합니다. */
-    font-size: clamp(0.72rem, 2.65vw, 0.86rem);
+    /* 모바일 안내문 크기: 긴 안내 문구가 화면을 많이 차지하지 않게 합니다. */
+    font-size: 2.25vw;
+
+    /* 모바일 안내문 줄 높이: 작은 글자도 읽히도록 줄 간격을 유지합니다. */
+    line-height: 1.55;
   }
 
   .infoArea {
     /* 모바일 정렬: 왼쪽 기준으로 읽기 쉽게 바꿉니다. */
     align-items: flex-start;
+
+    /* 모바일 정보 간격: 연락처와 회사 정보가 과하게 벌어지지 않게 합니다. */
+    gap: 2vw;
+  }
+
+  .phone {
+    /* 모바일 전화번호 크기: 푸터 안에서 필요한 만큼만 강조합니다. */
+    font-size: 2.35vw;
+  }
+
+  .company dt {
+    /* 모바일 회사 라벨 크기: 시행 같은 작은 정보 라벨입니다. */
+    font-size: 2vw;
+  }
+
+  .company dd {
+    /* 모바일 회사명 크기: 라벨 옆 실제 회사 정보입니다. */
+    font-size: 2vw;
   }
 
   .footerNav {
     /* 모바일 메뉴 정렬: 왼쪽부터 자연스럽게 줄바꿈합니다. */
     justify-content: flex-start;
+
+    /* 모바일 메뉴 간격: 하단 링크들이 촘촘하게 정리되게 합니다. */
+    gap: 1.4vw 2.4vw;
+  }
+
+  .footerNav a {
+    /* 모바일 하단 메뉴 크기: 보조 링크라서 본문보다 작게 둡니다. */
+    font-size: 2vw;
   }
 
   .actions {
     /* 모바일 버튼 배치: 두 버튼을 세로로 쌓아 터치하기 쉽게 합니다. */
     width: 100%;
     flex-direction: column;
+
+    /* 모바일 버튼 간격: 두 버튼 사이 공간입니다. */
+    gap: 2vw;
   }
 
   .reserveBtn,
   .familyBtn {
     /* 모바일 버튼 폭: 한 손 조작이 쉽도록 전체 폭을 사용합니다. */
     width: 100%;
+
+    /* 모바일 버튼 높이: Footer CTA가 과하게 커지지 않게 합니다. */
+    min-height: 8.2vw;
+
+    /* 모바일 버튼 글자 크기: 방문예약/패밀리사이트 문구 크기입니다. */
+    font-size: 2.35vw;
   }
 
   .familyList {
@@ -457,6 +505,11 @@
     width: min(92vw, 560px);
 
     /* 모바일 하단 여백: 고정 버튼 영역을 고려합니다. */
-    padding-bottom: 50px;
+    padding-bottom: 44px;
+  }
+
+  .bottom p {
+    /* 모바일 저작권 크기: 가장 낮은 정보 위계로 작게 처리합니다. */
+    font-size: 1.9vw;
   }
 }

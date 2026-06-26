@@ -9,28 +9,22 @@ import Bener from "../../components/Bener/Bener";
 import FixIcon from "../../components/FixIcon/FixIcon";
 import page1 from "../../assets/LocationEnvironment/LocationEnvironment2/page1.jpg";
 
+const locationMenu = [
+  { title: "입지안내", url: "/LocationEnvironment/intro" },
+  { title: "프리미엄", url: "/LocationEnvironment/primium" },
+];
 
-const LocationEnvironment1 = () => {
-  const menuContents = [
-    // { title: "입지 안내영상", url: "/FloorPlan/videos" },
-    { title: "입지안내", url: "/LocationEnvironment/intro" },
-    { title: "프리미엄", url: "/LocationEnvironment/primium" },
-  ];
+const LocationEnvironment2 = () => {
   const [isScroll, setIsScroll] = useState(false);
-  const { pathname } = useLocation(); // 현재 경로를 가져옴
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // 페이지가 로드될 때 스크롤을 최상단으로 이동
-  }, [pathname]); // pathname이 변경될 때마다 실행
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  // 화면 스크롤이 탑이 아니면 isScroll 값 true로 변환
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
+      setIsScroll(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,25 +36,29 @@ const LocationEnvironment1 = () => {
 
   return (
     <div className={styles.container}>
-<Header isChanged={isScroll} />
-<FixIcon />
+      <Header isChanged={isScroll} />
+      <FixIcon />
 
-<Bener title="프리미엄" />
-<MenuBar contents={menuContents} />
-<div className={styles.textBox}>
-  <div>평택 고덕국제화계획지구 위에</div>
-  <div>고덕 수자인 하우스디의 프리미엄을 누리세요.</div>
-</div>
+      <Bener title="프리미엄" />
+      <MenuBar contents={locationMenu} />
 
-<img
-  src={page1}
-  className={styles.image3}
-  alt="고덕 수자인 하우스디 프리미엄 및 고덕국제화계획지구 주거가치 이미지"
-/>
+      <div className={styles.textBox}>
+        <div>평택 고덕국제화계획지구 위에</div>
+        <div>고덕 수자인 하우스디의 프리미엄을 누리세요.</div>
+        <div>입지, 교통, 생활 인프라가 어우러진 브랜드 주거 가치를 제안합니다.</div>
+      </div>
+
+      <figure className={styles.locationMapFrame}>
+        <img
+          src={page1}
+          className={styles.image3}
+          alt="고덕 수자인 하우스디 프리미엄 및 고덕국제화계획지구 주거가치 이미지"
+        />
+      </figure>
 
       <Footer />
     </div>
   );
 };
 
-export default LocationEnvironment1;
+export default LocationEnvironment2;

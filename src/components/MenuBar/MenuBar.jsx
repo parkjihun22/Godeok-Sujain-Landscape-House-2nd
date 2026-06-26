@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./MenuBar.module.scss";
 
-const MenuBar = ({ contents }) => {
-    const location = useLocation();
-    const [menu, setMenu] = useState([]);
+const MenuBar = ({ contents = [] }) => {
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        if (contents) setMenu(contents);
-    }, [contents])
+  const isActive = (url) => pathname === url || pathname.startsWith(`${url}/`);
 
-    return (
-        <div className={styles.container}>
-            {menu.map((item, idx) => (
-                <Link
-                    key={idx} // 각 자식 컴포넌트에 고유한 키를 설정해야 합니다.
-                    className={location.pathname.includes(item.url) ? styles.selectedItem : styles.item}
-                    to={item.url} // to 속성에 직접 URL 문자열을 전달합니다.
-                >
-                    <div>{item.title}</div>
-                </Link>
-            ))}
-        </div>
-    )
-}
+  return (
+    <nav className={styles.container} aria-label="페이지 하위 메뉴">
+      <div className={styles.inner}>
+        {contents.map((item) => {
+          const active = isActive(item.url);
+
+          return (
+            <Link
+              key={item.url}
+              className={active ? styles.selectedItem : styles.item}
+              to={item.url}
+              aria-current={active ? "page" : undefined}
+            >
+              <span>{item.title}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
+  );
+};
 
 export default MenuBar;

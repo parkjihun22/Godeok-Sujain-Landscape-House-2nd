@@ -98,7 +98,7 @@
   grid-template-columns: 1fr 0.72fr;
 
   /* 열 간격: 제목과 설명 사이의 여백입니다. */
-  gap: 6vw;
+  gap: 1vw;
 
   /* 아래 여백: 헤더와 카드 리스트 사이의 공간입니다. */
   margin-bottom: 3vw;
@@ -113,7 +113,7 @@
   grid-column: 1 / -1;
 
   /* 글자 크기: 라벨은 작고 선명하게 처리합니다. */
-  font-size: clamp(0.72rem, 0.74vw, 0.9rem);
+  font-size: 1vw;
 
   /* 글자 굵기: 작은 영문 라벨의 선명도를 높입니다. */
   font-weight: 800;
@@ -131,7 +131,7 @@
   margin: 0;
 
   /* 글자 크기: 섹션의 큰 메시지가 되도록 설정합니다. */
-  font-size: clamp(2.3rem, 3.05vw, 4.6rem);
+  font-size: 3.05vw;
 
   /* 글자 굵기: 고급스럽게 보이도록 너무 두껍지 않게 유지합니다. */
   font-weight: 600;
@@ -155,7 +155,7 @@
   margin: 0;
 
   /* 글자 크기: 제목보다 낮은 정보 위계입니다. */
-  font-size: clamp(0.92rem, 0.92vw, 1.08rem);
+  font-size: 0.92vw;
 
   /* 줄 높이: 긴 설명도 읽기 편하게 합니다. */
   line-height: 1.85;
@@ -307,7 +307,7 @@
   right: -0.3vw;
 
   /* 숫자 크기: 카드의 리듬을 만드는 장식 번호입니다. */
-  font-size: clamp(4.5rem, 6.3vw, 8.2rem);
+  font-size: 6.3vw;
 
   /* 숫자 굵기: 얇고 크게 보여 배경 요소처럼 만듭니다. */
   font-weight: 300;
@@ -340,7 +340,7 @@
   margin-bottom: 0.8vw;
 
   /* 글자 크기: 작은 영문 라벨의 크기입니다. */
-  font-size: clamp(0.68rem, 0.66vw, 0.82rem);
+  font-size: 1vw;
 
   /* 글자 굵기: 선명한 라벨을 만듭니다. */
   font-weight: 800;
@@ -358,7 +358,7 @@
   margin: 0;
 
   /* 제목 크기: 카드 안에서 가장 중요한 텍스트입니다. */
-  font-size: clamp(1.25rem, 1.38vw, 1.85rem);
+  font-size: 1.38vw;
 
   /* 제목 굵기: 프리미엄 항목명이 분명하게 보이도록 합니다. */
   font-weight: 700;
@@ -382,7 +382,7 @@
   margin-top: 0.9vw;
 
   /* 글자 크기: 제목보다 작지만 핵심 문구로 읽히게 합니다. */
-  font-size: clamp(0.92rem, 0.92vw, 1.08rem);
+  font-size: 1vw;
 
   /* 줄 높이: 한두 줄 문구의 가독성을 높입니다. */
   line-height: 1.55;
@@ -403,7 +403,7 @@
   margin: 1vw 0 0;
 
   /* 글자 크기: 카드 설명이 과하게 커지지 않게 합니다. */
-  font-size: clamp(0.82rem, 0.78vw, 0.96rem);
+  font-size: 0.78vw;
 
   /* 줄 높이: 설명 문장이 편하게 읽히도록 합니다. */
   line-height: 1.72;
@@ -427,7 +427,7 @@
   margin-top: 1.35vw;
 
   /* 링크 글자 크기: 작은 명령 텍스트로 보이게 합니다. */
-  font-size: clamp(0.78rem, 0.76vw, 0.92rem);
+  font-size: 0.76vw;
 
   /* 링크 굵기: 클릭 가능한 요소임을 분명히 합니다. */
   font-weight: 800;
@@ -471,6 +471,60 @@
   /* hover 효과: 선이 살짝 사라지며 반응성을 줍니다. */
   transform: scaleX(0.35);
 }
+
+/* =========================
+   PC 보정 스타일
+========================= */
+
+
+/* =========================
+   최종 화면 최적화 보정
+   - PC에서는 4개 카드가 화면 아래에서 잘리지 않게 낮추고,
+     모바일에서는 제목과 카드 높이를 실제 사용 화면에 맞춥니다.
+========================= */
+@media (min-width: 901px) {
+  .premium {
+    /* PC 최종 섹션 여백: 고정 헤더가 있는 화면에서 카드 하단 잘림을 줄입니다. */
+    min-height: auto;
+    padding: 4.5vw 0 4.2vw;
+  }
+
+  .premium__head {
+    /* PC 최종 헤더 간격: 카드 리스트가 화면 아래로 밀리지 않도록 여백을 줄입니다. */
+    margin-bottom: 2.2vw;
+  }
+
+  .premium__head h2 {
+    /* PC 최종 제목 크기: 큰 모니터에서도 과도하게 커지지 않도록 제한합니다. */
+    font-size: 2.65vw;
+  }
+
+  .premium__item {
+    /* PC 최종 카드 높이: 4개 카드가 한 화면에 더 안정적으로 보이도록 높이를 낮춥니다. */
+    min-height: 23vw;
+    padding: 1.7vw;
+  }
+
+  .premium__visual {
+    /* PC 최종 카드 상단 장식 높이: 숫자 장식이 텍스트 영역을 밀어내지 않게 합니다. */
+    min-height: 6.2vw;
+  }
+
+  .premium__visual img {
+    /* PC 최종 아이콘 크기: 카드 안에서 균형 있게 보이도록 제한합니다. */
+    width: 3.5vw;
+  }
+
+  .premium__visual span {
+    /* PC 최종 배경 숫자 크기: 장식 숫자가 카드 밖으로 커지지 않도록 제한합니다. */
+    font-size: 5.2vw;
+  }
+}
+
+/* =========================
+   모바일 스타일
+========================= */
+
 
 /* =========================
    태블릿 이하 레이아웃
@@ -542,6 +596,7 @@
     width: 8vw;
   }
 }
+
 
 /* =========================
    모바일 레이아웃
@@ -654,18 +709,18 @@
 
   .premium__content strong {
     /* 모바일 부제목 위 여백: 제목과 명확히 분리합니다. */
-    margin-top: 3vw;
+    margin-top: 1vw;
 
     /* 모바일 부제목 크기: 핵심 문구로 읽히게 합니다. */
-    font-size: 3.7vw;
+    font-size: 2.5vw;
   }
 
   .premium__content p {
     /* 모바일 설명 위 여백: 부제목과 본문 사이의 호흡입니다. */
-    margin-top: 3vw;
+    margin-top: 2vw;
 
     /* 모바일 설명 크기: 긴 설명이 편하게 읽히도록 합니다. */
-    font-size: 3.35vw;
+    font-size: 2.5vw;
 
     /* 모바일 설명 줄 높이: 본문 가독성을 확보합니다. */
     line-height: 1.7;
@@ -673,10 +728,10 @@
 
   .premium__link {
     /* 모바일 링크 위 여백: 설명 아래에서 명확한 액션으로 보이게 합니다. */
-    margin-top: 4.4vw;
+    margin-top: 4vw;
 
     /* 모바일 링크 크기: 터치 가능한 텍스트로 보이게 합니다. */
-    font-size: 3.2vw;
+    font-size: 2.7vw;
   }
 
   .premium__link::after {
@@ -685,54 +740,10 @@
   }
 }
 
-/* =========================
-   최종 화면 최적화 보정
-   - PC에서는 4개 카드가 화면 아래에서 잘리지 않게 낮추고,
-     모바일에서는 제목과 카드 높이를 실제 사용 화면에 맞춥니다.
-========================= */
-@media (min-width: 901px) {
-  .premium {
-    /* PC 최종 섹션 여백: 고정 헤더가 있는 화면에서 카드 하단 잘림을 줄입니다. */
-    min-height: auto;
-    padding: clamp(54px, 4.5vw, 82px) 0 clamp(58px, 4.2vw, 78px);
-  }
-
-  .premium__head {
-    /* PC 최종 헤더 간격: 카드 리스트가 화면 아래로 밀리지 않도록 여백을 줄입니다. */
-    margin-bottom: clamp(28px, 2.2vw, 44px);
-  }
-
-  .premium__head h2 {
-    /* PC 최종 제목 크기: 큰 모니터에서도 과도하게 커지지 않도록 제한합니다. */
-    font-size: clamp(2.15rem, 2.65vw, 3.8rem);
-  }
-
-  .premium__item {
-    /* PC 최종 카드 높이: 4개 카드가 한 화면에 더 안정적으로 보이도록 높이를 낮춥니다. */
-    min-height: clamp(360px, 23vw, 450px);
-    padding: clamp(26px, 1.7vw, 34px);
-  }
-
-  .premium__visual {
-    /* PC 최종 카드 상단 장식 높이: 숫자 장식이 텍스트 영역을 밀어내지 않게 합니다. */
-    min-height: clamp(88px, 6.2vw, 116px);
-  }
-
-  .premium__visual img {
-    /* PC 최종 아이콘 크기: 카드 안에서 균형 있게 보이도록 제한합니다. */
-    width: clamp(48px, 3.5vw, 68px);
-  }
-
-  .premium__visual span {
-    /* PC 최종 배경 숫자 크기: 장식 숫자가 카드 밖으로 커지지 않도록 제한합니다. */
-    font-size: clamp(4.2rem, 5.2vw, 6.9rem);
-  }
-}
-
 @media (max-width: 768px) {
   .premium {
     /* 모바일 최종 섹션 여백: 제목과 첫 카드가 자연스럽게 이어지도록 과한 상단 여백을 줄입니다. */
-    padding: 12vw 0 15vw;
+    padding: 6vw 0 15vw;
   }
 
   .premium__inner {
@@ -742,26 +753,27 @@
 
   .premium__head h2 {
     /* 모바일 최종 제목 크기: 긴 제목이 두세 줄 안에서 안정적으로 보이도록 낮춥니다. */
-    font-size: clamp(2rem, 7.2vw, 2.75rem);
+    font-size: 4vw;
   }
 
   .premium__head p {
     /* 모바일 최종 설명 크기: 카드 시작 지점이 과하게 아래로 밀리지 않도록 합니다. */
-    font-size: clamp(0.98rem, 3.45vw, 1.12rem);
+    margin-top: -3vw;
+    font-size: 2.5vw;
   }
 
   .premium__item {
     /* 모바일 최종 카드 여백: 카드 내용은 유지하되 세로 점유율을 줄입니다. */
-    padding: clamp(24px, 5vw, 32px);
+    padding: 5vw;
   }
 
   .premium__visual {
     /* 모바일 최종 카드 장식 높이: 첫 카드가 화면 하단에서 잘리는 문제를 줄입니다. */
-    min-height: clamp(78px, 15vw, 106px);
+    min-height: 10vw;
   }
 
   .premium__content h3 {
     /* 모바일 최종 카드 제목 크기: 고급스러운 무게감은 유지하고 과한 확대는 줄입니다. */
-    font-size: clamp(1.45rem, 5vw, 1.9rem);
+    font-size: 3vw;
   }
 }

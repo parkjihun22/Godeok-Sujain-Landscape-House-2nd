@@ -29,7 +29,7 @@ export default function Counter({
         }
       },
       {
-        threshold: 0.45,
+        threshold: 0.9,
       }
     );
 
