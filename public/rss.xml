@@ -118,19 +118,29 @@ type="application/rss+xml"/>
 </item>
 
 <item>
-<title>84C㎡</title>
+<title>84B㎡</title>
 <link>https://www.sujain-modellhouse.co.kr/FloorPlan/59B</link>
 <guid>https://www.sujain-modellhouse.co.kr/FloorPlan/59B</guid>
 <description><![CDATA[
-고덕 수자인 하우스디 84C㎡ 세대 평면과 공간 구성을 확인하세요.
+고덕 수자인 하우스디 84B㎡ 세대 평면과 공간 구성을 확인하세요.
+]]></description>
+<pubDate>Fri, 26 Jun 2026 09:00:00 +0900</pubDate>
+</item>
+
+<item>
+<title>84C㎡</title>
+<link>https://www.sujain-modellhouse.co.kr/FloorPlan/84A</link>
+<guid>https://www.sujain-modellhouse.co.kr/FloorPlan/84A</guid>
+<description><![CDATA[
+고덕 수자인 하우스디 84C㎡ 세대 평면과 공간 설계를 확인하세요.
 ]]></description>
 <pubDate>Fri, 26 Jun 2026 09:00:00 +0900</pubDate>
 </item>
 
 <item>
 <title>101㎡</title>
-<link>https://www.sujain-modellhouse.co.kr/FloorPlan/84A</link>
-<guid>https://www.sujain-modellhouse.co.kr/FloorPlan/84A</guid>
+<link>https://www.sujain-modellhouse.co.kr/FloorPlan/84B</link>
+<guid>https://www.sujain-modellhouse.co.kr/FloorPlan/84B</guid>
 <description><![CDATA[
 고덕 수자인 하우스디 101㎡ 세대 평면과 공간 설계를 확인하세요.
 ]]></description>
