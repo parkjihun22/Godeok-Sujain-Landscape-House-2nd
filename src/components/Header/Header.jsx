@@ -14,90 +14,67 @@ import mainlogowhite from "../../assets/logo/mainlogowhite.jpg";
 import InterestPopup from "../../components/InterestPopup/InterestPopup";
 
 const T = {
-  siteName: "\uace0\ub355 \uc218\uc790\uc778 \ud558\uc6b0\uc2a4\ub514",
-  brand: "\ube0c\ub79c\ub4dc\uc18c\uac1c",
-  brandVideo: "\ud64d\ubcf4 \uc601\uc0c1",
-  business: "\uc0ac\uc5c5\uac1c\uc694",
-  businessIntro: "\uc0ac\uc5c5\uc548\ub0b4",
-  salesSchedule: "\ubd84\uc591\uc77c\uc815",
-  sales: "\ubd84\uc591\uc548\ub0b4",
-  supply: "\uacf5\uae09\uc548\ub0b4",
-  notice: "\ubaa8\uc9d1\uacf5\uace0\uc548\ub0b4",
-  location: "\uc785\uc9c0\ud658\uacbd",
-  locationIntro: "\uc785\uc9c0\uc548\ub0b4",
-  premium: "\ud504\ub9ac\ubbf8\uc5c4",
-  complex: "\ub2e8\uc9c0\uc548\ub0b4",
-  layout: "\ub2e8\uc9c0 \ubc30\uce58\ub3c4",
-  unitLayout: "\ud638\uc218 \ubc30\uce58\ub3c4",
-  community: "\ucee4\ubba4\ub2c8\ud2f0",
-  unit: "\uc138\ub300\uc548\ub0b4",
-  emodel: "E-\ubaa8\ub378\ud558\uc6b0\uc2a4",
-  interior: "\uc778\ud14c\ub9ac\uc5b4",
-  promo: "\ud64d\ubcf4\uc13c\ud130",
-  customer: "\uad00\uc2ec\uace0\uac1d\ub4f1\ub85d",
-  phoneConsult: "\uc804\ud654\uc0c1\ub2f4",
-  mobileMenu: "\ubaa8\ubc14\uc77c \uba54\ub274 \uc5f4\uae30",
-  popupOpen: "\uad00\uc2ec\uace0\uac1d \ub4f1\ub85d \ud31d\uc5c5 \uc5f4\uae30",
-  mainMenu: "\uc8fc\uc694 \uba54\ub274",
-  logoAlt: "\uace0\ub355 \uc218\uc790\uc778 \ud558\uc6b0\uc2a4\ub514 \ub85c\uace0",
-  bannerAlt:
-    "\uace0\ub355 \uc218\uc790\uc778 \ud558\uc6b0\uc2a4\ub514 \ubc29\ubb38\uc608\uc57d \uc548\ub0b4 \ubc30\ub108",
+  siteName: "고덕 수자인 하우스디",
+
+  phoneConsult: "전화상담",
+  mobileMenu: "모바일 메뉴 열기",
+  popupOpen: "관심고객 등록 팝업 열기",
+  mainMenu: "주요 메뉴",
+  logoAlt: "고덕 수자인 하우스디 로고",
+  bannerAlt: "고덕 수자인 하우스디 방문예약 안내 배너",
 };
 
 const menuArray = [
   {
-    title: T.brand,
-    subMenu: [{ subTitle: T.brandVideo, subUrl: "/Brand/video" }],
-  },
-  {
-    title: T.business,
+    title: "브랜드소개",
     subMenu: [
-      { subTitle: T.businessIntro, subUrl: "/BusinessGuide/intro" },
-      { subTitle: T.salesSchedule, subUrl: "/BusinessGuide/plan" },
+      { subTitle: "브랜드소개", subUrl: "/Brand/intro" },
+      { subTitle: "홍보영상", subUrl: "/Brand/video" },
     ],
   },
   {
-    title: T.sales,
+    title: "사업안내",
     subMenu: [
-      { subTitle: T.supply, subUrl: "/BusinessGuide/documents" },
-      { subTitle: T.notice, subUrl: "/SalesInfo/announcement" },
+      { subTitle: "사업안내", subUrl: "/BusinessGuide/intro" },
+      { subTitle: "분양일정", subUrl: "/BusinessGuide/plan" },
     ],
   },
   {
-    title: T.location,
+    title: "입지환경",
     subMenu: [
-      { subTitle: T.locationIntro, subUrl: "/LocationEnvironment/intro" },
-      { subTitle: T.premium, subUrl: "/LocationEnvironment/primium" },
+      { subTitle: "입지안내", subUrl: "/LocationEnvironment/intro" },
+      { subTitle: "프리미엄", subUrl: "/LocationEnvironment/primium" },
     ],
   },
   {
-    title: T.complex,
+    title: "단지안내",
     subMenu: [
-      { subTitle: T.layout, subUrl: "/ComplexGuide/intro" },
-      { subTitle: T.unitLayout, subUrl: "/ComplexGuide/detailintro" },
-      { subTitle: T.community, subUrl: "/ComplexGuide/community" },
+      { subTitle: "단지배치도", subUrl: "/ComplexGuide/intro" },
+      { subTitle: "호수배치도", subUrl: "/ComplexGuide/detailintro" },
+      { subTitle: "커뮤니티", subUrl: "/ComplexGuide/community" },
     ],
   },
   {
-    title: T.unit,
+    title: "분양안내",
     subMenu: [
-      { subTitle: "84A\u33a1", subUrl: "/FloorPlan/59A" },
-      { subTitle: "84C\u33a1", subUrl: "/FloorPlan/59B" },
-      { subTitle: "101\u33a1", subUrl: "/FloorPlan/84A" },
-      { subTitle: T.emodel, subUrl: "/FloorPlan/Emodel" },
+      { subTitle: "공급안내", subUrl: "/BusinessGuide/documents" },
+      { subTitle: "입주자 모집공고", subUrl: "/SalesInfo/announcement" },
+      { subTitle: "계약서류안내", subUrl: "/SalesInfo/guide" },
     ],
   },
   {
-    title: T.interior,
+    title: "타입안내",
     subMenu: [
-      { subTitle: "84A\u33a1", subUrl: "/Interior/59A" },
-      { subTitle: "84C\u33a1", subUrl: "/Interior/84A" },
-      { subTitle: "101\u33a1", subUrl: "/Interior/84B" },
+      { subTitle: "84㎡A ", subUrl: "/FloorPlan/59A" },
+      { subTitle: "84㎡B", subUrl: "/FloorPlan/59B" },
+      { subTitle: "84㎡C", subUrl: "/FloorPlan/84A" },
+      { subTitle: "101㎡", subUrl: "/FloorPlan/84B" },
+      { subTitle: "E-모델하우스", subUrl: "/FloorPlan/Emodel" },
     ],
   },
   {
-    title: T.promo,
-    subMenu: [{ subTitle: T.customer, subUrl: "/Promotion/Customer" }],
+    title: "홍보센터",
+    subMenu: [{ subTitle: "관심고객등록", subUrl: "/Promotion/Customer" }],
   },
 ];
 

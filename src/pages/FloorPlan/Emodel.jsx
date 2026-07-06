@@ -11,8 +11,9 @@ import FixIcon from "../../components/FixIcon/FixIcon";
 const Emodel = () => {
   const menuContents = [
     { title: "84A㎡", url: "/FloorPlan/59A" },
-    { title: "84C㎡", url: "/FloorPlan/59B" },
-    { title: "101㎡", url: "/FloorPlan/84A" },
+    { title: "84B㎡", url: "/FloorPlan/59B" },
+    { title: "84C㎡", url: "/FloorPlan/84A" },
+    { title: "101㎡", url: "/FloorPlan/84B" },
     { title: "E-모델하우스", url: "/FloorPlan/Emodel" },
   ];
 
