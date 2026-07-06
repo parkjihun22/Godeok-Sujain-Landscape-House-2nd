@@ -58,7 +58,7 @@ const FloorPlanVideos = () => {
       <Bener title="세대안내영상" />
       <MenuBar contents={menuContents} />
 <div className={styles.textBox}>
-				<div>강화의 새로운 기준 위에</div>
+				<div>평택의 새로운 기준 위에</div>
 				<div>고덕 수자인 하우스디가 자부심으로 찾아옵니다.</div>
 			</div>
 
