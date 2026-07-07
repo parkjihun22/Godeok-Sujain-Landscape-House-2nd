@@ -7,7 +7,7 @@ export const siteSeo = {
   organizationId: "https://www.sujain-modellhouse.co.kr/#organization",
   websiteId: "https://www.sujain-modellhouse.co.kr/#website",
   defaultDescription:
-    "평택 고덕국제화계획지구 A-67BL에 공급되는 고덕 수자인 하우스디 공식 홈페이지입니다. 사업개요, 입지환경, 공급안내, 84A·84B·84C·101㎡ 평면도, E-모델하우스와 방문예약 정보를 안내합니다.",
+    "고덕 수자인 하우스디ㅣ☎️(대표)1533-8848ㅣ평택 고덕 수자인 하우스디ㅣ경기도 평택시 고덕신도시 A-67BL블록ㅣ총 403세대ㅣ84㎡·101㎡ㅣ견본주택ㅣ모델하우스ㅣ청약ㅣ분양가ㅣ공급정보ㅣ방문예약",
   project: {
     addressCountry: "KR",
     addressRegion: "경기도",
