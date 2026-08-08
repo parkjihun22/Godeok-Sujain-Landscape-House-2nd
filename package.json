@@ -24,6 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "node -e \"process.env.CI='false'; require('react-scripts/scripts/build')\"",
+    "press:sync": "node scripts/sync-press.mjs",
+    "press:sync:delete-missing": "node scripts/sync-press.mjs --delete-missing",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

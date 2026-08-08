@@ -13,6 +13,8 @@ export const siteSeo = {
     addressRegion: "경기도",
     addressLocality: "평택시",
     streetAddress: "고덕국제화계획지구 A-67BL",
+    households: "총 403세대",
+    block: "A-67BL",
     brands: ["수자인", "hausD"],
     navigationSchemaName: "고덕 수자인 하우스디 주요 메뉴",
   },

@@ -38,6 +38,7 @@ import SubscriptionGuide from './pages/SalesInfo/SubscriptionGuide';
 
 import Press from './pages/Promotion/Press';
 import PressDetail from './pages/Promotion/PressDetail';
+import PressWrite from './pages/Promotion/PressWrite';
 import Customer from './pages/Promotion/Customer';
 import RouteSEO from './components/SEO/RouteSEO';
 
@@ -90,11 +91,14 @@ function App() {
 
         {/* Promotion */}
         <Route path="/Promotion/Press" element={<Press />} />
+        <Route path="/Promotion/Press/Admin" element={<PressWrite />} />
+        <Route path="/Promotion/PressWrite" element={<PressWrite />} />
         <Route path="/Promotion/Press/:id" element={<PressDetail />} />
         <Route path="/Promotion/Customer" element={<Customer />} />
 
         {/* site 기반 라우트: 기존 외부 URL 호환용 */}
         <Route path="/:site/press" element={<Press />} />
+        <Route path="/:site/press/admin" element={<PressWrite />} />
         <Route path="/:site/press/:id" element={<PressDetail />} />
 
         <Route path="/:site/customer" element={<Customer />} />

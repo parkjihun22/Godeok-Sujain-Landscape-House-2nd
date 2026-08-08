@@ -74,7 +74,10 @@ const menuArray = [
   },
   {
     title: "홍보센터",
-    subMenu: [{ subTitle: "관심고객등록", subUrl: "/Promotion/Customer" }],
+    subMenu: [
+      { subTitle: "언론보도", subUrl: "/Promotion/Press" },
+      { subTitle: "관심고객등록", subUrl: "/Promotion/Customer" },
+    ],
   },
 ];
 
